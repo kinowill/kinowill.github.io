@@ -530,11 +530,19 @@ a {
 }
 
 .project-card.category-card {
-  min-height: auto;
+  display: flex;
 }
 
 .project-card.category-card .project-content {
-  padding: 1.2rem 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Le lien est poussé en bas de la carte */
+.project-card.category-card .project-link {
+  margin-top: auto;
+  padding-top: 0.6rem; /* petit espace au-dessus du lien */
 }
 
 /* Contact */
