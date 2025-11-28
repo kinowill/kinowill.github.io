@@ -718,3 +718,14 @@ a {
     font-size: clamp(1.8rem, 6vw, 2.2rem);
   }
 }
+
+/* Espaces latéraux header en mobile */
+@media (max-width: 768px) {
+  .brand {
+    margin-left: 6px;
+  }
+
+  .nav-toggle {
+    margin-right: 6px;
+  }
+}
