@@ -200,27 +200,42 @@ a {
   border: 1px solid var(--border);
   background: rgba(11, 12, 22, 0.9);
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
   padding: 0;
+  position: relative;
 }
 
+/* Barres */
 .nav-toggle span {
-  display: block;
+  position: absolute;
+  left: 50%;
   width: 18px;
   height: 2px;
   border-radius: 999px;
   background: var(--text);
-  transition: transform var(--transition), opacity var(--transition),
-    translate var(--transition);
+  transform: translateX(-50%);
+  transition:
+    transform var(--transition),
+    opacity var(--transition),
+    top var(--transition);
 }
 
-.nav-toggle span + span {
-  margin-top: 4px;
+/* Positions fermées */
+.nav-toggle span:nth-child(1) {
+  top: 12px;
 }
 
+.nav-toggle span:nth-child(2) {
+  top: 19px;
+}
+
+.nav-toggle span:nth-child(3) {
+  top: 26px;
+}
+
+/* États ouverts → croix */
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
-  transform: rotate(45deg) translateY(4px);
+  top: 19px;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(2) {
@@ -228,8 +243,10 @@ a {
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-4px);
+  top: 19px;
+  transform: translateX(-50%) rotate(-45deg);
 }
+
 
 /* Hero */
 
