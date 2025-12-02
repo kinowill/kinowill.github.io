@@ -602,6 +602,20 @@ a {
 .contact-socials a:focus-visible {
   color: var(--text);
 }
+.contact-phone {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.contact-phone a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-phone a:hover,
+.contact-phone a:focus-visible {
+  text-decoration: underline;
+}
 
 /* Footer */
 
