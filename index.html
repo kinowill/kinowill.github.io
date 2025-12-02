@@ -335,9 +335,12 @@
       <button class="lightbox-nav lightbox-prev" type="button" aria-label="Image précédente">‹</button>
       <button class="lightbox-nav lightbox-next" type="button" aria-label="Image suivante">›</button>
 
-      <div class="lightbox-image-wrapper">
+            <div class="lightbox-image-wrapper">
         <img src="" alt="" class="lightbox-image" loading="lazy">
       </div>
+
+      <!-- Titre de l’image (basé sur le alt) -->
+      <div class="lightbox-caption" aria-live="polite"></div>
 
       <div class="lightbox-toolbar">
         <button class="lightbox-toggle-thumbs" type="button">
@@ -348,6 +351,7 @@
       <div class="lightbox-thumbs" aria-hidden="true"></div>
 
       <div class="lightbox-counter"></div>
+
     </div>
   </div>
    
