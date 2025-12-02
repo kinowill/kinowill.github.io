@@ -889,7 +889,7 @@ body.lightbox-open {
     height: 32px;
   }
 
-  .  .lightbox-image-wrapper {
+  .lightbox-image-wrapper {
     padding: 0 2.2rem;
     min-height: 0;
     overflow: auto;
