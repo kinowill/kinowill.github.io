@@ -403,7 +403,7 @@
       emailLink.href = 'mailto:' + address;
     })();
 
-            // Galerie lightbox pour les projets
+                // Galerie lightbox pour les projets
     (function () {
       const galleries = {
         uxui: [
@@ -449,7 +449,7 @@
         imageEl.style.transform = `scale(${scale})`;
 
         if (imageWrapper) {
-          if (zoomIndex === 0) {
+          if (scale === 1) {
             imageWrapper.classList.remove('is-zoomed');
           } else {
             imageWrapper.classList.add('is-zoomed');
@@ -459,7 +459,13 @@
 
       function resetZoom() {
         zoomIndex = 0;
-        applyZoom();
+        if (imageEl) {
+          imageEl.style.transformOrigin = 'center center';
+          imageEl.style.transform = 'scale(1)';
+        }
+        if (imageWrapper) {
+          imageWrapper.classList.remove('is-zoomed');
+        }
       }
 
       function updateImage() {
@@ -528,16 +534,24 @@
         if (event.key === 'ArrowLeft') showNext(-1);
       });
 
-      // Clic sur l’image → cycle les niveaux de zoom
-      if (imageWrapper) {
-        imageWrapper.addEventListener('click', () => {
+      // Clic sur l’image → zoom autour du point cliqué
+      if (imageWrapper && imageEl) {
+        imageWrapper.addEventListener('click', (event) => {
           if (!currentGallery) return;
+
+          const rect = imageEl.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+          // on place l'origine du zoom là où on a cliqué
+          imageEl.style.transformOrigin = `${x}% ${y}%`;
+
+          // on passe au niveau de zoom suivant
           zoomIndex = (zoomIndex + 1) % zoomLevels.length;
           applyZoom();
         });
       }
     })();
-
     
   </script>
 </body>
