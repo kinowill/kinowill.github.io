@@ -774,8 +774,8 @@ body.lightbox-open {
 
 .lightbox-dialog {
   position: relative;
-  max-width: min(1000px, 94vw);
-  max-height: min(700px, 90vh);
+  max-width: min(1200px, 96vw);   /* plus large */
+  max-height: min(820px, 94vh);   /* plus haut */
   width: 100%;
   background: var(--bg-elevated);
   border-radius: 18px;
@@ -812,6 +812,12 @@ body.lightbox-open {
   border-radius: 12px;
   border: 1px solid var(--border);
   object-fit: contain;
+  transition: transform 180ms ease-out;
+}
+
+/* zoom léger au survol */
+.lightbox-image-wrapper:hover .lightbox-image {
+  transform: scale(1.04);
 }
 
 .lightbox-close {
