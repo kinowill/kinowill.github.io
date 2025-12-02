@@ -234,7 +234,7 @@
                 <li>Parcours utilisateurs et écrans clés (home, catégories, fiches produits)</li>
                 <li>Prototypes interactifs simples pour présentation et tests</li>
               </ul>
-              <a href="#" class="project-link">Voir des maquettes</a>
+              <a href="#" class="project-link" data-gallery="uxui">Voir des maquettes</a>
             </div>
           </article>
 
@@ -251,7 +251,7 @@
                 <li>Visuels pour campagnes Meta Ads (Facebook / Instagram)</li>
                 <li>Bannières et encarts promotionnels pour le site e-commerce</li>
               </ul>
-              <a href="#" class="project-link">Voir des supports marketing</a>
+              <a href="#" class="project-link" data-gallery="marketing">Voir des supports marketing</a>
             </div>
           </article>
 
@@ -268,7 +268,7 @@
                 <li>Templates réutilisables pour annonces promo et temps forts</li>
                 <li>Montages photo/vidéo courts adaptés aux formats sociaux</li>
               </ul>
-              <a href="#" class="project-link">Voir des contenus sociaux</a>
+              <a href="#" class="project-link" data-gallery="social">Voir des contenus sociaux</a>
             </div>
           </article>
 
@@ -285,7 +285,7 @@
                 <li>Photographie produit, retouche et mises en scène</li>
                 <li>Flyers, affiches, stickers et autres supports print</li>
               </ul>
-              <a href="#" class="project-link">Voir des visuels & illustrations</a>
+              <a href="#" class="project-link" data-gallery="illu">Voir des visuels & illustrations</a>
             </div>
           </article>
         </div>
@@ -324,6 +324,24 @@
         </div>
       </div>
     </section>
+
+    
+  <!-- Lightbox projets -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-overlay" data-lightbox-close></div>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galerie de travaux">
+      <button class="lightbox-close" type="button" aria-label="Fermer la galerie" data-lightbox-close>×</button>
+
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Image précédente">‹</button>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Image suivante">›</button>
+
+      <div class="lightbox-image-wrapper">
+        <img src="" alt="" class="lightbox-image" loading="lazy">
+      </div>
+
+      <div class="lightbox-counter"></div>
+    </div>
+  </div>    
   </main>
 
   <footer class="site-footer">
@@ -384,6 +402,107 @@
 
       emailLink.href = 'mailto:' + address;
     })();
+
+        // Galerie lightbox pour les projets
+    (function () {
+      const galleries = {
+        uxui: [
+          { src: 'assets/uxui-1.webp', alt: 'Maquettes UX/UI – écran 1' },
+          { src: 'assets/uxui-2.webp', alt: 'Maquettes UX/UI – écran 2' },
+          { src: 'assets/uxui-3.webp', alt: 'Maquettes UX/UI – écran 3' }
+        ],
+        marketing: [
+          { src: 'assets/marketing-1.webp', alt: 'Supports marketing – bannières et emails' },
+          { src: 'assets/marketing-2.webp', alt: 'Supports marketing – campagnes Meta Ads' }
+        ],
+        social: [
+          { src: 'assets/social-1.webp', alt: 'Contenus réseaux sociaux – posts' },
+          { src: 'assets/social-2.webp', alt: 'Contenus réseaux sociaux – stories' }
+        ],
+        illu: [
+          { src: 'assets/illu-1.webp', alt: 'Illustrations et concept art – planche 1' },
+          { src: 'assets/illu-2.webp', alt: 'Illustrations et concept art – planche 2' }
+        ]
+      };
+
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox) return;
+
+      const imageEl = lightbox.querySelector('.lightbox-image');
+      const counterEl = lightbox.querySelector('.lightbox-counter');
+      const prevBtn = lightbox.querySelector('.lightbox-prev');
+      const nextBtn = lightbox.querySelector('.lightbox-next');
+      const overlay = lightbox.querySelector('.lightbox-overlay');
+      const closeEls = lightbox.querySelectorAll('[data-lightbox-close]');
+
+      let currentGallery = null;
+      let currentIndex = 0;
+
+      function updateImage() {
+        const gallery = galleries[currentGallery];
+        if (!gallery || !gallery.length) return;
+        const item = gallery[currentIndex];
+        imageEl.src = item.src;
+        imageEl.alt = item.alt || '';
+        if (counterEl) {
+          counterEl.textContent = `${currentIndex + 1} / ${gallery.length}`;
+        }
+      }
+
+      function openLightbox(key, index) {
+        const gallery = galleries[key];
+        if (!gallery || !gallery.length) return;
+        currentGallery = key;
+        currentIndex = index || 0;
+        updateImage();
+        lightbox.classList.add('is-open');
+        document.body.classList.add('lightbox-open');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        document.body.classList.remove('lightbox-open');
+        currentGallery = null;
+      }
+
+      function showNext(delta) {
+        const gallery = galleries[currentGallery];
+        if (!gallery || !gallery.length) return;
+        const length = gallery.length;
+        currentIndex = (currentIndex + delta + length) % length;
+        updateImage();
+      }
+
+      // Clic sur les liens "Voir ..."
+      document.querySelectorAll('.project-link[data-gallery]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const key = link.getAttribute('data-gallery');
+          openLightbox(key, 0);
+        });
+      });
+
+      // Navigation
+      if (nextBtn) nextBtn.addEventListener('click', () => showNext(1));
+      if (prevBtn) prevBtn.addEventListener('click', () => showNext(-1));
+
+      // Fermeture (croix + overlay)
+      closeEls.forEach((el) => {
+        el.addEventListener('click', closeLightbox);
+      });
+      if (overlay) {
+        overlay.addEventListener('click', closeLightbox);
+      }
+
+      // Clavier : ESC / flèches
+      document.addEventListener('keydown', (event) => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') showNext(1);
+        if (event.key === 'ArrowLeft') showNext(-1);
+      });
+    })();
+    
   </script>
 </body>
 </html>
