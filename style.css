@@ -793,13 +793,14 @@ body.lightbox-open {
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;    /* le haut de l’image colle en haut du wrapper */
   justify-content: center;
-  padding: 0 3.2rem;        /* espace pour les flèches gauche/droite */
+  padding: 0 3.2rem;          /* espace pour les flèches gauche/droite */
   box-sizing: border-box;
-  overflow: hidden;         /* pour recadrer quand on zoome */
-  cursor: zoom-in;          /* loupe + par défaut */
+  overflow: auto;             /* scroll vertical si l’image est plus haute */
+  cursor: zoom-in;            /* loupe + par défaut */
 }
+
 
 .lightbox-image-wrapper.is-zoomed {
   cursor: zoom-out;         /* loupe - quand on est zoomé */
@@ -810,7 +811,7 @@ body.lightbox-open {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 100%;
+  /* pas de max-height ici → la hauteur peut dépasser, on scrollera */
   border-radius: 12px;
   border: 1px solid var(--border);
   object-fit: contain;
@@ -888,8 +889,9 @@ body.lightbox-open {
     height: 32px;
   }
 
-  .lightbox-image-wrapper {
+  .  .lightbox-image-wrapper {
     padding: 0 2.2rem;
     min-height: 0;
+    overflow: auto;
   }
 }
