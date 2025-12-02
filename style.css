@@ -793,6 +793,8 @@ body.lightbox-open {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 3.2rem; /* réserve de la place pour les flèches gauche/droite */
+  box-sizing: border-box;
 }
 
 .lightbox-image {
@@ -872,4 +874,9 @@ body.lightbox-open {
     width: 32px;
     height: 32px;
   }
+
+  .lightbox-image-wrapper {
+    padding: 0 2.2rem;
+  }
 }
+
