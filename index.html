@@ -456,6 +456,7 @@
       const imageEl = lightbox.querySelector('.lightbox-image');
       const imageWrapper = lightbox.querySelector('.lightbox-image-wrapper');
       const counterEl = lightbox.querySelector('.lightbox-counter');
+      const captionEl = lightbox.querySelector('.lightbox-caption');
       const prevBtn = lightbox.querySelector('.lightbox-prev');
       const nextBtn = lightbox.querySelector('.lightbox-next');
       const overlay = lightbox.querySelector('.lightbox-overlay');
@@ -520,6 +521,7 @@
           btn.type = 'button';
           btn.className = 'lightbox-thumb';
           btn.dataset.index = String(index);
+          btn.title = item.alt || '';
 
           const img = document.createElement('img');
           img.src = item.src;
@@ -552,18 +554,22 @@
         }
       }
 
-      function updateImage() {
+        function updateImage() {
         const gallery = galleries[currentGallery];
         if (!gallery || !gallery.length) return;
         const item = gallery[currentIndex];
         imageEl.src = item.src;
         imageEl.alt = item.alt || '';
+        if (captionEl) {
+          captionEl.textContent = item.alt || '';
+        }
         if (counterEl) {
           counterEl.textContent = (currentIndex + 1) + ' / ' + gallery.length;
         }
         resetZoom();
         updateActiveThumb();
       }
+
 
       function openLightbox(key, index) {
         const gallery = galleries[key];
