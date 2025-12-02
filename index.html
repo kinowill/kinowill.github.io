@@ -403,7 +403,7 @@
       emailLink.href = 'mailto:' + address;
     })();
 
-        // Galerie lightbox pour les projets
+            // Galerie lightbox pour les projets
     (function () {
       const galleries = {
         uxui: [
@@ -429,6 +429,7 @@
       if (!lightbox) return;
 
       const imageEl = lightbox.querySelector('.lightbox-image');
+      const imageWrapper = lightbox.querySelector('.lightbox-image-wrapper');
       const counterEl = lightbox.querySelector('.lightbox-counter');
       const prevBtn = lightbox.querySelector('.lightbox-prev');
       const nextBtn = lightbox.querySelector('.lightbox-next');
@@ -437,6 +438,29 @@
 
       let currentGallery = null;
       let currentIndex = 0;
+
+      // niveaux de zoom : 1×, 1.6×, 2.3×
+      const zoomLevels = [1, 1.6, 2.3];
+      let zoomIndex = 0;
+
+      function applyZoom() {
+        if (!imageEl) return;
+        const scale = zoomLevels[zoomIndex] || 1;
+        imageEl.style.transform = `scale(${scale})`;
+
+        if (imageWrapper) {
+          if (zoomIndex === 0) {
+            imageWrapper.classList.remove('is-zoomed');
+          } else {
+            imageWrapper.classList.add('is-zoomed');
+          }
+        }
+      }
+
+      function resetZoom() {
+        zoomIndex = 0;
+        applyZoom();
+      }
 
       function updateImage() {
         const gallery = galleries[currentGallery];
@@ -447,6 +471,7 @@
         if (counterEl) {
           counterEl.textContent = `${currentIndex + 1} / ${gallery.length}`;
         }
+        resetZoom();
       }
 
       function openLightbox(key, index) {
@@ -463,6 +488,7 @@
         lightbox.classList.remove('is-open');
         document.body.classList.remove('lightbox-open');
         currentGallery = null;
+        resetZoom();
       }
 
       function showNext(delta) {
@@ -482,7 +508,7 @@
         });
       });
 
-      // Navigation
+      // Navigation flèches
       if (nextBtn) nextBtn.addEventListener('click', () => showNext(1));
       if (prevBtn) prevBtn.addEventListener('click', () => showNext(-1));
 
@@ -501,7 +527,17 @@
         if (event.key === 'ArrowRight') showNext(1);
         if (event.key === 'ArrowLeft') showNext(-1);
       });
+
+      // Clic sur l’image → cycle les niveaux de zoom
+      if (imageWrapper) {
+        imageWrapper.addEventListener('click', () => {
+          if (!currentGallery) return;
+          zoomIndex = (zoomIndex + 1) % zoomLevels.length;
+          applyZoom();
+        });
+      }
     })();
+
     
   </script>
 </body>
