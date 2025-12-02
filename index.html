@@ -412,7 +412,7 @@
       emailLink.href = 'mailto:' + address;
     })();
 
-                // Galerie lightbox pour les projets
+                    // Galerie lightbox pour les projets
     (function () {
       const galleries = {
         uxui: [
@@ -448,6 +448,8 @@
       const nextBtn = lightbox.querySelector('.lightbox-next');
       const overlay = lightbox.querySelector('.lightbox-overlay');
       const closeEls = lightbox.querySelectorAll('[data-lightbox-close]');
+      const thumbsContainer = lightbox.querySelector('.lightbox-thumbs');
+      const toggleThumbsBtn = lightbox.querySelector('.lightbox-toggle-thumbs');
 
       let currentGallery = null;
       let currentIndex = 0;
@@ -456,10 +458,12 @@
       const zoomLevels = [1, 1.6, 2.3];
       let zoomIndex = 0;
 
+      let thumbsVisible = false;
+
       function applyZoom() {
         if (!imageEl) return;
         const scale = zoomLevels[zoomIndex] || 1;
-        imageEl.style.transform = `scale(${scale})`;
+        imageEl.style.transform = 'scale(' + scale + ')';
 
         if (imageWrapper) {
           if (scale === 1) {
@@ -481,6 +485,61 @@
         }
       }
 
+      function updateActiveThumb() {
+        if (!thumbsContainer) return;
+        const thumbButtons = thumbsContainer.querySelectorAll('.lightbox-thumb');
+        thumbButtons.forEach(function (btn, idx) {
+          if (idx === currentIndex) {
+            btn.classList.add('is-active');
+          } else {
+            btn.classList.remove('is-active');
+          }
+        });
+      }
+
+      function buildThumbs() {
+        if (!thumbsContainer) return;
+        const gallery = galleries[currentGallery];
+        thumbsContainer.innerHTML = '';
+        if (!gallery || !gallery.length) return;
+
+        gallery.forEach(function (item, index) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'lightbox-thumb';
+          btn.dataset.index = String(index);
+
+          const img = document.createElement('img');
+          img.src = item.src;
+          img.alt = item.alt || '';
+
+          btn.appendChild(img);
+
+          btn.addEventListener('click', function () {
+            currentIndex = index;
+            updateImage();
+          });
+
+          thumbsContainer.appendChild(btn);
+        });
+
+        updateActiveThumb();
+      }
+
+      function setThumbsVisible(show) {
+        if (!thumbsContainer || !toggleThumbsBtn) return;
+        thumbsVisible = show;
+        if (show) {
+          thumbsContainer.classList.add('is-open');
+          thumbsContainer.setAttribute('aria-hidden', 'false');
+          toggleThumbsBtn.textContent = 'Masquer la bibliothèque';
+        } else {
+          thumbsContainer.classList.remove('is-open');
+          thumbsContainer.setAttribute('aria-hidden', 'true');
+          toggleThumbsBtn.textContent = 'Afficher la bibliothèque';
+        }
+      }
+
       function updateImage() {
         const gallery = galleries[currentGallery];
         if (!gallery || !gallery.length) return;
@@ -488,9 +547,10 @@
         imageEl.src = item.src;
         imageEl.alt = item.alt || '';
         if (counterEl) {
-          counterEl.textContent = `${currentIndex + 1} / ${gallery.length}`;
+          counterEl.textContent = (currentIndex + 1) + ' / ' + gallery.length;
         }
         resetZoom();
+        updateActiveThumb();
       }
 
       function openLightbox(key, index) {
@@ -499,6 +559,8 @@
         currentGallery = key;
         currentIndex = index || 0;
         updateImage();
+        buildThumbs();
+        setThumbsVisible(false);
         lightbox.classList.add('is-open');
         document.body.classList.add('lightbox-open');
       }
@@ -508,6 +570,7 @@
         document.body.classList.remove('lightbox-open');
         currentGallery = null;
         resetZoom();
+        setThumbsVisible(false);
       }
 
       function showNext(delta) {
@@ -519,8 +582,8 @@
       }
 
       // Clic sur les liens "Voir ..."
-      document.querySelectorAll('.project-link[data-gallery]').forEach((link) => {
-        link.addEventListener('click', (event) => {
+      document.querySelectorAll('.project-link[data-gallery]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
           event.preventDefault();
           const key = link.getAttribute('data-gallery');
           openLightbox(key, 0);
@@ -528,11 +591,19 @@
       });
 
       // Navigation flèches
-      if (nextBtn) nextBtn.addEventListener('click', () => showNext(1));
-      if (prevBtn) prevBtn.addEventListener('click', () => showNext(-1));
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          showNext(1);
+        });
+      }
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          showNext(-1);
+        });
+      }
 
       // Fermeture (croix + overlay)
-      closeEls.forEach((el) => {
+      closeEls.forEach(function (el) {
         el.addEventListener('click', closeLightbox);
       });
       if (overlay) {
@@ -540,16 +611,27 @@
       }
 
       // Clavier : ESC / flèches
-      document.addEventListener('keydown', (event) => {
+      document.addEventListener('keydown', function (event) {
         if (!lightbox.classList.contains('is-open')) return;
         if (event.key === 'Escape') closeLightbox();
         if (event.key === 'ArrowRight') showNext(1);
         if (event.key === 'ArrowLeft') showNext(-1);
       });
 
+      // Bouton "Afficher / Masquer la bibliothèque"
+      if (toggleThumbsBtn) {
+        toggleThumbsBtn.addEventListener('click', function () {
+          const show = !thumbsVisible;
+          if (show) {
+            buildThumbs();
+          }
+          setThumbsVisible(show);
+        });
+      }
+
       // Clic sur l’image → zoom autour du point cliqué
       if (imageWrapper && imageEl) {
-        imageWrapper.addEventListener('click', (event) => {
+        imageWrapper.addEventListener('click', function (event) {
           if (!currentGallery) return;
 
           const rect = imageEl.getBoundingClientRect();
@@ -557,7 +639,7 @@
           const y = ((event.clientY - rect.top) / rect.height) * 100;
 
           // on place l'origine du zoom là où on a cliqué
-          imageEl.style.transformOrigin = `${x}% ${y}%`;
+          imageEl.style.transformOrigin = x + '% ' + y + '%';
 
           // on passe au niveau de zoom suivant
           zoomIndex = (zoomIndex + 1) % zoomLevels.length;
