@@ -747,8 +747,6 @@ a {
 
 /* Lightbox galerie projets */
 
-/* Lightbox galerie projets */
-
 body.lightbox-open {
   overflow: hidden;
 }
@@ -774,7 +772,7 @@ body.lightbox-open {
 
 .lightbox-dialog {
   position: relative;
-  max-width: min(1200px, 96vw);   /* plus large */
+  max-width: min(1200px, 96vw);   /* plus large sur desktop */
   max-height: min(820px, 94vh);   /* plus haut */
   width: 100%;
   background: var(--bg-elevated);
@@ -791,19 +789,23 @@ body.lightbox-open {
 }
 
 /* Conteneur de l’image :
-   on laisse de la place pour les flèches à gauche/droite,
-   mais SANS couper l’image (pas d’overflow hidden) */
+   réserve de place pour les flèches + loupe */
 .lightbox-image-wrapper {
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 3.2rem; /* réserve pour les flèches */
+  padding: 0 3.2rem;        /* espace pour les flèches gauche/droite */
   box-sizing: border-box;
+  overflow: hidden;         /* pour recadrer quand on zoome */
+  cursor: zoom-in;          /* loupe + par défaut */
 }
 
-/* L’image s’adapte à la taille dispo, sans crop,
-   quel que soit son format (horizontal / vertical) */
+.lightbox-image-wrapper.is-zoomed {
+  cursor: zoom-out;         /* loupe - quand on est zoomé */
+}
+
+/* L’image s’adapte à la zone dispo sans crop en mode 1× */
 .lightbox-image {
   width: auto;
   height: auto;
@@ -812,12 +814,7 @@ body.lightbox-open {
   border-radius: 12px;
   border: 1px solid var(--border);
   object-fit: contain;
-  transition: transform 180ms ease-out;
-}
-
-/* zoom léger au survol */
-.lightbox-image-wrapper:hover .lightbox-image {
-  transform: scale(1.04);
+  transition: transform 200ms ease-out;
 }
 
 .lightbox-close {
@@ -891,8 +888,6 @@ body.lightbox-open {
   }
 
   .lightbox-image-wrapper {
-    padding: 0 2.2rem; /* un peu moins de marge sur petits écrans */
+    padding: 0 2.2rem;  /* un peu moins de marge sur petits écrans */
   }
 }
-
-
