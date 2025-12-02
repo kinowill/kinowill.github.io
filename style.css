@@ -792,6 +792,7 @@ body.lightbox-open {
    réserve de place pour les flèches + loupe */
 .lightbox-image-wrapper {
   flex: 1 1 auto;
+  min-height: 0;            /* clé : permet au contenu de rétrécir en hauteur dans un conteneur flex */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -800,6 +801,7 @@ body.lightbox-open {
   overflow: hidden;         /* pour recadrer quand on zoome */
   cursor: zoom-in;          /* loupe + par défaut */
 }
+
 
 .lightbox-image-wrapper.is-zoomed {
   cursor: zoom-out;         /* loupe - quand on est zoomé */
