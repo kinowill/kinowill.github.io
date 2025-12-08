@@ -832,6 +832,41 @@ body.lightbox-open {
   box-sizing: border-box;
   overflow: auto;             /* scroll vertical si l’image est plus haute */
   cursor: zoom-in;            /* loupe + par défaut */
+  position: relative;
+}
+
+.lightbox-scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%) translateY(4px);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(5, 6, 11, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--muted);
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+.lightbox-scroll-arrow {
+  font-size: 0.9rem;
+}
+
+/* Le wrapper indique qu'il y a du scroll possible */
+.lightbox-image-wrapper.has-scroll .lightbox-scroll-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Dès qu'on a un peu scrollé, on cache le hint */
+.lightbox-image-wrapper.is-scrolled .lightbox-scroll-hint {
+  opacity: 0;
 }
 
 
@@ -1008,5 +1043,10 @@ body.lightbox-open {
 
   .lightbox-toolbar {
     justify-content: center;
+  }
+  
+  .lightbox-scroll-hint {
+    bottom: 6px;
+    font-size: 0.75rem;
   }
 }
