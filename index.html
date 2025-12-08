@@ -447,222 +447,264 @@
           { src: 'assets/Social-5.webp', alt: 'Conception du Hub de Liens pour les Réseaux Sociaux (bio.link)' }
         ]
       };
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
 
-      const lightbox = document.getElementById('lightbox');
-      if (!lightbox) return;
+  const imageEl = lightbox.querySelector('.lightbox-image');
+  const imageWrapper = lightbox.querySelector('.lightbox-image-wrapper');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const counterEl = lightbox.querySelector('.lightbox-counter');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const overlay = lightbox.querySelector('.lightbox-overlay');
+  const closeEls = lightbox.querySelectorAll('[data-lightbox-close]');
+  const thumbsContainer = lightbox.querySelector('.lightbox-thumbs');
+  const toggleThumbsBtn = lightbox.querySelector('.lightbox-toggle-thumbs');
 
-      const imageEl = lightbox.querySelector('.lightbox-image');
-      const imageWrapper = lightbox.querySelector('.lightbox-image-wrapper');
-      const counterEl = lightbox.querySelector('.lightbox-counter');
-      const captionEl = lightbox.querySelector('.lightbox-caption');
-      const prevBtn = lightbox.querySelector('.lightbox-prev');
-      const nextBtn = lightbox.querySelector('.lightbox-next');
-      const overlay = lightbox.querySelector('.lightbox-overlay');
-      const closeEls = lightbox.querySelectorAll('[data-lightbox-close]');
-      const thumbsContainer = lightbox.querySelector('.lightbox-thumbs');
-      const toggleThumbsBtn = lightbox.querySelector('.lightbox-toggle-thumbs');
+  let currentGallery = null;
+  let currentIndex = 0;
 
-      let currentGallery = null;
-      let currentIndex = 0;
+  // niveaux de zoom : 1×, 1.6×, 2.3×
+  const zoomLevels = [1, 1.6, 2.3];
+  let zoomIndex = 0;
 
-      // niveaux de zoom : 1×, 1.6×, 2.3×
-      const zoomLevels = [1, 1.6, 2.3];
-      let zoomIndex = 0;
+  let thumbsVisible = false;
 
-      let thumbsVisible = false;
+  function applyZoom() {
+    if (!imageEl) return;
+    const scale = zoomLevels[zoomIndex] || 1;
+    imageEl.style.transform = 'scale(' + scale + ')';
 
-      function applyZoom() {
-        if (!imageEl) return;
-        const scale = zoomLevels[zoomIndex] || 1;
-        imageEl.style.transform = 'scale(' + scale + ')';
-
-        if (imageWrapper) {
-          if (scale === 1) {
-            imageWrapper.classList.remove('is-zoomed');
-          } else {
-            imageWrapper.classList.add('is-zoomed');
-          }
-        }
+    if (imageWrapper) {
+      if (scale === 1) {
+        imageWrapper.classList.remove('is-zoomed');
+      } else {
+        imageWrapper.classList.add('is-zoomed');
       }
+    }
+  }
 
-      function resetZoom() {
-        zoomIndex = 0;
-        if (imageEl) {
-          imageEl.style.transformOrigin = 'center center';
-          imageEl.style.transform = 'scale(1)';
-        }
-        if (imageWrapper) {
-          imageWrapper.classList.remove('is-zoomed');
-        }
+  function resetZoom() {
+    zoomIndex = 0;
+    if (imageEl) {
+      imageEl.style.transformOrigin = 'center center';
+      imageEl.style.transform = 'scale(1)';
+    }
+    if (imageWrapper) {
+      imageWrapper.classList.remove('is-zoomed');
+    }
+  }
+
+  function updateActiveThumb() {
+    if (!thumbsContainer) return;
+    const thumbButtons = thumbsContainer.querySelectorAll('.lightbox-thumb');
+    thumbButtons.forEach(function (btn, idx) {
+      if (idx === currentIndex) {
+        btn.classList.add('is-active');
+      } else {
+        btn.classList.remove('is-active');
       }
+    });
+  }
 
-      function updateActiveThumb() {
-        if (!thumbsContainer) return;
-        const thumbButtons = thumbsContainer.querySelectorAll('.lightbox-thumb');
-        thumbButtons.forEach(function (btn, idx) {
-          if (idx === currentIndex) {
-            btn.classList.add('is-active');
-          } else {
-            btn.classList.remove('is-active');
-          }
-        });
-      }
+  function buildThumbs() {
+    if (!thumbsContainer) return;
+    const gallery = galleries[currentGallery];
+    thumbsContainer.innerHTML = '';
+    if (!gallery || !gallery.length) return;
 
-      function buildThumbs() {
-        if (!thumbsContainer) return;
-        const gallery = galleries[currentGallery];
-        thumbsContainer.innerHTML = '';
-        if (!gallery || !gallery.length) return;
+    gallery.forEach(function (item, index) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'lightbox-thumb';
+      btn.dataset.index = String(index);
+      btn.title = item.alt || '';
 
-        gallery.forEach(function (item, index) {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'lightbox-thumb';
-          btn.dataset.index = String(index);
-          btn.title = item.alt || '';
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.alt = item.alt || '';
 
-          const img = document.createElement('img');
-          img.src = item.src;
-          img.alt = item.alt || '';
+      btn.appendChild(img);
 
-          btn.appendChild(img);
-
-          btn.addEventListener('click', function () {
-            currentIndex = index;
-            updateImage();
-          });
-
-          thumbsContainer.appendChild(btn);
-        });
-
-        updateActiveThumb();
-      }
-
-      function setThumbsVisible(show) {
-        if (!thumbsContainer || !toggleThumbsBtn) return;
-        thumbsVisible = show;
-        if (show) {
-          thumbsContainer.classList.add('is-open');
-          thumbsContainer.setAttribute('aria-hidden', 'false');
-          toggleThumbsBtn.textContent = 'Masquer la bibliothèque';
-        } else {
-          thumbsContainer.classList.remove('is-open');
-          thumbsContainer.setAttribute('aria-hidden', 'true');
-          toggleThumbsBtn.textContent = 'Afficher la bibliothèque';
-        }
-      }
-
-        function updateImage() {
-        const gallery = galleries[currentGallery];
-        if (!gallery || !gallery.length) return;
-        const item = gallery[currentIndex];
-        imageEl.src = item.src;
-        imageEl.alt = item.alt || '';
-        if (captionEl) {
-          captionEl.textContent = item.alt || '';
-        }
-        if (counterEl) {
-          counterEl.textContent = (currentIndex + 1) + ' / ' + gallery.length;
-        }
-        resetZoom();
-        updateActiveThumb();
-      }
-
-
-      function openLightbox(key, index) {
-        const gallery = galleries[key];
-        if (!gallery || !gallery.length) return;
-        currentGallery = key;
-        currentIndex = index || 0;
+      btn.addEventListener('click', function () {
+        currentIndex = index;
         updateImage();
+      });
+
+      thumbsContainer.appendChild(btn);
+    });
+
+    updateActiveThumb();
+  }
+
+  function setThumbsVisible(show) {
+    if (!thumbsContainer || !toggleThumbsBtn) return;
+    thumbsVisible = show;
+    if (show) {
+      thumbsContainer.classList.add('is-open');
+      thumbsContainer.setAttribute('aria-hidden', 'false');
+      toggleThumbsBtn.textContent = 'Masquer la bibliothèque';
+    } else {
+      thumbsContainer.classList.remove('is-open');
+      thumbsContainer.setAttribute('aria-hidden', 'true');
+      toggleThumbsBtn.textContent = 'Afficher la bibliothèque';
+    }
+  }
+
+  // Affiche / cache le hint "Faire défiler"
+  function updateScrollHint() {
+    if (!imageWrapper) return;
+
+    const canScroll =
+      imageWrapper.scrollHeight > imageWrapper.clientHeight + 4;
+
+    if (canScroll) {
+      imageWrapper.classList.add('has-scroll');
+      imageWrapper.classList.remove('is-scrolled');
+    } else {
+      imageWrapper.classList.remove('has-scroll');
+      imageWrapper.classList.remove('is-scrolled');
+    }
+  }
+
+  function updateImage() {
+    const gallery = galleries[currentGallery];
+    if (!gallery || !gallery.length) return;
+    const item = gallery[currentIndex];
+
+    imageEl.src = item.src;
+    imageEl.alt = item.alt || '';
+
+    if (captionEl) {
+      captionEl.textContent = item.alt || '';
+    }
+
+    if (counterEl) {
+      counterEl.textContent =
+        (currentIndex + 1) + ' / ' + gallery.length;
+    }
+
+    resetZoom();
+    updateActiveThumb();
+
+    // on remonte en haut de la zone à chaque nouvelle image
+    if (imageWrapper) {
+      imageWrapper.scrollTop = 0;
+    }
+
+    // on calcule s'il y a besoin d'afficher le hint de scroll
+    requestAnimationFrame(updateScrollHint);
+  }
+
+  function openLightbox(key, index) {
+    const gallery = galleries[key];
+    if (!gallery || !gallery.length) return;
+    currentGallery = key;
+    currentIndex = index || 0;
+    updateImage();
+    buildThumbs();
+    setThumbsVisible(false);
+    lightbox.classList.add('is-open');
+    document.body.classList.add('lightbox-open');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('lightbox-open');
+    currentGallery = null;
+    resetZoom();
+    setThumbsVisible(false);
+  }
+
+  function showNext(delta) {
+    const gallery = galleries[currentGallery];
+    if (!gallery || !gallery.length) return;
+    const length = gallery.length;
+    currentIndex = (currentIndex + delta + length) % length;
+    updateImage();
+  }
+
+  // Clic sur les liens "Voir ..."
+  document
+    .querySelectorAll('.project-link[data-gallery]')
+    .forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const key = link.getAttribute('data-gallery');
+        openLightbox(key, 0);
+      });
+    });
+
+  // Navigation flèches
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      showNext(1);
+    });
+  }
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function () {
+      showNext(-1);
+    });
+  }
+
+  // Fermeture (croix + overlay)
+  closeEls.forEach(function (el) {
+    el.addEventListener('click', closeLightbox);
+  });
+  if (overlay) {
+    overlay.addEventListener('click', closeLightbox);
+  }
+
+  // Clavier : ESC / flèches
+  document.addEventListener('keydown', function (event) {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowRight') showNext(1);
+    if (event.key === 'ArrowLeft') showNext(-1);
+  });
+
+  // Bouton "Afficher / Masquer la bibliothèque"
+  if (toggleThumbsBtn) {
+    toggleThumbsBtn.addEventListener('click', function () {
+      const show = !thumbsVisible;
+      if (show) {
         buildThumbs();
-        setThumbsVisible(false);
-        lightbox.classList.add('is-open');
-        document.body.classList.add('lightbox-open');
       }
+      setThumbsVisible(show);
+    });
+  }
 
-      function closeLightbox() {
-        lightbox.classList.remove('is-open');
-        document.body.classList.remove('lightbox-open');
-        currentGallery = null;
-        resetZoom();
-        setThumbsVisible(false);
+  // Quand on scrolle dans la zone image → on cache le hint
+  if (imageWrapper) {
+    imageWrapper.addEventListener('scroll', function () {
+      if (!imageWrapper.classList.contains('has-scroll')) return;
+
+      if (imageWrapper.scrollTop > 8) {
+        imageWrapper.classList.add('is-scrolled');
+      } else {
+        imageWrapper.classList.remove('is-scrolled');
       }
+    });
+  }
 
-      function showNext(delta) {
-        const gallery = galleries[currentGallery];
-        if (!gallery || !gallery.length) return;
-        const length = gallery.length;
-        currentIndex = (currentIndex + delta + length) % length;
-        updateImage();
-      }
+  // Clic sur l’image → zoom autour du point cliqué
+  if (imageWrapper && imageEl) {
+    imageWrapper.addEventListener('click', function (event) {
+      if (!currentGallery) return;
 
-      // Clic sur les liens "Voir ..."
-      document.querySelectorAll('.project-link[data-gallery]').forEach(function (link) {
-        link.addEventListener('click', function (event) {
-          event.preventDefault();
-          const key = link.getAttribute('data-gallery');
-          openLightbox(key, 0);
-        });
-      });
+      const rect = imageEl.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
 
-      // Navigation flèches
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function () {
-          showNext(1);
-        });
-      }
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function () {
-          showNext(-1);
-        });
-      }
+      imageEl.style.transformOrigin = x + '% ' + y + '%';
 
-      // Fermeture (croix + overlay)
-      closeEls.forEach(function (el) {
-        el.addEventListener('click', closeLightbox);
-      });
-      if (overlay) {
-        overlay.addEventListener('click', closeLightbox);
-      }
+      zoomIndex = (zoomIndex + 1) % zoomLevels.length;
+      applyZoom();
 
-      // Clavier : ESC / flèches
-      document.addEventListener('keydown', function (event) {
-        if (!lightbox.classList.contains('is-open')) return;
-        if (event.key === 'Escape') closeLightbox();
-        if (event.key === 'ArrowRight') showNext(1);
-        if (event.key === 'ArrowLeft') showNext(-1);
-      });
-
-      // Bouton "Afficher / Masquer la bibliothèque"
-      if (toggleThumbsBtn) {
-        toggleThumbsBtn.addEventListener('click', function () {
-          const show = !thumbsVisible;
-          if (show) {
-            buildThumbs();
-          }
-          setThumbsVisible(show);
-        });
-      }
-
-      // Clic sur l’image → zoom autour du point cliqué
-      if (imageWrapper && imageEl) {
-        imageWrapper.addEventListener('click', function (event) {
-          if (!currentGallery) return;
-
-          const rect = imageEl.getBoundingClientRect();
-          const x = ((event.clientX - rect.left) / rect.width) * 100;
-          const y = ((event.clientY - rect.top) / rect.height) * 100;
-
-          // on place l'origine du zoom là où on a cliqué
-          imageEl.style.transformOrigin = x + '% ' + y + '%';
-
-          // on passe au niveau de zoom suivant
-          zoomIndex = (zoomIndex + 1) % zoomLevels.length;
-          applyZoom();
-        });
-      }
-    })();
+      // après un zoom / dézoom, on recalcule s'il y a du scroll
+      requestAnimationFrame(updateScrollHint);
+    });
+  } 
     
   </script>
 </body>
