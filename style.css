@@ -541,32 +541,54 @@ a {
   background: #000;
 }
 
+/* Section vidéos – carrousel */
+
 .videos-section {
   margin-top: 2.5rem;
 }
 
 .videos-section h3 {
   font-size: 1.05rem;
-  margin: 0 0 1rem;
+  margin: 0 0 0.9rem;
 }
 
-.videos-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr); /* une vidéo par ligne → aperçu bien large */
-  gap: 1.6rem;
-}
-
-.video-item {
+/* Conteneur principal du carrousel */
+.videos-carousel {
+  position: relative;
   background: var(--bg-elevated);
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  padding: 1.2rem 1.2rem 1.3rem;
+  padding: 1rem 1rem 1.3rem;
+  overflow: hidden;
 }
 
+/* Piste qui contient les slides */
+.videos-track {
+  display: flex;
+  transition: transform var(--transition);
+}
+
+/* Chaque “slide” vidéo */
+.video-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+  pointer-events: none; /* seul le slide actif est cliquable */
+}
+
+.video-item.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Ratio 16:9 pour l’iframe */
 .video-embed-ratio {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16/9 */
+  padding-top: 56.25%;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -579,11 +601,102 @@ a {
   border: 0;
 }
 
+/* Légende sous chaque vidéo */
 .video-caption {
-  margin: 0.8rem 0 0;
+  margin: 0.7rem 0 0.25rem;
   font-size: 0.9rem;
   color: var(--muted);
 }
+
+/* Lien pour ouvrir la vidéo dans un onglet */
+.video-external {
+  display: inline-flex;
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.video-external:hover,
+.video-external:focus-visible {
+  text-decoration: underline;
+}
+
+/* Flèches de navigation */
+.videos-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(5, 6, 11, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.3rem;
+  z-index: 2;
+}
+
+.videos-prev {
+  left: 0.5rem;
+}
+
+.videos-next {
+  right: 0.5rem;
+}
+
+/* Petits points d’indication sous le carrousel */
+.videos-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.8rem;
+}
+
+.videos-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: var(--border);
+  padding: 0;
+  cursor: pointer;
+}
+
+.videos-dot.is-active {
+  width: 18px;
+  background: var(--accent);
+}
+
+/* Mobile : on garde un carrousel mais les flèches sont un peu plus proches */
+@media (max-width: 640px) {
+  .videos-carousel {
+    padding: 0.8rem 0.8rem 1.1rem;
+  }
+
+  .videos-nav {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+
+  .videos-prev {
+    left: 0.3rem;
+  }
+
+  .videos-next {
+    right: 0.3rem;
+  }
+
+  .video-caption {
+    font-size: 0.85rem;
+  }
+}
+
 
 /* Petit ajustement mobile si besoin */
 @media (max-width: 640px) {
