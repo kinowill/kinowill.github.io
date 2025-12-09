@@ -816,7 +816,90 @@
         });
       }
     })();
+  // Carrousel "Quelques vidéos"
+  (function () {
+    const carousel = document.querySelector('.videos-carousel');
+    const track = carousel ? carousel.querySelector('.videos-track') : null;
+    if (!carousel || !track) return;
 
+    const items = Array.from(track.querySelectorAll('.video-item'));
+    const prevBtn = carousel.querySelector('.videos-prev');
+    const nextBtn = carousel.querySelector('.videos-next');
+    const dotsContainer = document.querySelector('.videos-dots');
+    const dots = dotsContainer
+      ? Array.from(dotsContainer.querySelectorAll('.videos-dot'))
+      : [];
+
+    if (!items.length) return;
+
+    let current = 0;
+
+    function goTo(index) {
+      const max = items.length;
+      current = (index + max) % max;
+
+      const offset = -current * 100;
+      track.style.transform = 'translateX(' + offset + '%)';
+
+      items.forEach(function (item, idx) {
+        item.classList.toggle('is-active', idx === current);
+      });
+
+      dots.forEach(function (dot, idx) {
+        dot.classList.toggle('is-active', idx === current);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        goTo(current - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        goTo(current + 1);
+      });
+    }
+
+    dots.forEach(function (dot, idx) {
+      dot.addEventListener('click', function () {
+        goTo(idx);
+      });
+    });
+
+    // Swipe simple sur mobile
+    let startX = null;
+    track.addEventListener(
+      'touchstart',
+      function (e) {
+        if (!e.touches || !e.touches.length) return;
+        startX = e.touches[0].clientX;
+      },
+      { passive: true }
+    );
+
+    track.addEventListener(
+      'touchend',
+      function (e) {
+        if (startX === null) return;
+        const endX = e.changedTouches[0].clientX;
+        const delta = endX - startX;
+        if (Math.abs(delta) > 40) {
+          if (delta < 0) goTo(current + 1);
+          else goTo(current - 1);
+        }
+        startX = null;
+      },
+      { passive: true }
+    );
+
+    // Initialisation : va sur le slide marqué is-active, sinon 0
+    const initialIndex = items.findIndex(function (item) {
+      return item.classList.contains('is-active');
+    });
+    goTo(initialIndex >= 0 ? initialIndex : 0);
+  })();
     
   </script>
 </body>
