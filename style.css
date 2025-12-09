@@ -869,8 +869,8 @@ body.lightbox-open {
 
 .lightbox-dialog {
   position: relative;
-  max-width: min(1200px, 96vw);   /* plus large sur desktop */
-  max-height: min(820px, 94vh);   /* plus haut */
+  max-width: min(1440px, 98vw);   /* plus large sur desktop */
+  max-height: min(900px, 96vh);   /* plus haut */
   width: 100%;
   background: transparent;        /* plus de carte opaque */
   border-radius: 0;
@@ -893,7 +893,7 @@ body.lightbox-open {
   display: flex;
   align-items: flex-start;    /* le haut de l’image colle en haut du wrapper */
   justify-content: center;
-  padding: 0 3.2rem;          /* espace pour les flèches gauche/droite */
+    padding: 0 1.4rem;          /* espace pour les flèches gauche/droite */
   box-sizing: border-box;
   overflow: auto;             /* scroll vertical si l’image est plus haute */
   cursor: zoom-in;            /* loupe + par défaut */
@@ -1081,10 +1081,9 @@ body.lightbox-open {
     height: 32px;
   }
 
-  .lightbox-image-wrapper {
-    padding: 0 2.2rem;
+    .lightbox-image-wrapper {
+    padding: 0 1.2rem;
     min-height: 0;
-    overflow: auto;
   }
 
   /* miniatures un peu plus petites en mobile */
