@@ -488,14 +488,14 @@ a {
   align-items: center;
   justify-content: center;
   margin-top: 0.8rem;
-  padding: 0.30rem 1.4rem;       /* moins haut, un peu plus long */
+  padding: 0.32rem 1.4rem;   /* un peu plus fin */
   border-radius: 999px;
   border: 1px solid rgba(123, 92, 255, 0.7);
   background: rgba(123, 92, 255, 0.16);
   color: #fff;
   font-size: 0.84rem;
   font-weight: 500;
-  line-height: 1.2;             /* centre mieux le texte dans le pill */
+  line-height: 1;            /* texte bien centré verticalement */
   text-decoration: none;
   box-shadow: 0 0 14px rgba(123, 92, 255, 0.5);
   transition:
@@ -514,9 +514,19 @@ a {
   transform: translateY(-1px);
 }
 
+/* Cartes catégories : on pousse juste le lien en bas */
+.project-card.category-card {
+  display: flex;
+}
+
+.project-card.category-card .project-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .project-card.category-card .project-link {
   margin-top: auto;
-  padding-top: 0.3rem;  /* au lieu de 0.6rem si tu avais cette valeur */
 }
 
 /* Points dans les cartes projets (catégories) */
@@ -566,22 +576,6 @@ a {
 
 .projects-grid-categories {
   margin-top: 0.8rem;
-}
-
-.project-card.category-card {
-  display: flex;
-}
-
-.project-card.category-card .project-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* Le lien est poussé en bas de la carte */
-.project-card.category-card .project-link {
-  margin-top: auto;
-  padding-top: 0.6rem; /* petit espace au-dessus du lien */
 }
 
 /* Contact */
