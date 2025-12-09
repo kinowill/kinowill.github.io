@@ -541,11 +541,34 @@ a {
   background: #000;
 }
 
-/* Ratio 16:9 responsive pour la vidéo */
+.videos-section {
+  margin-top: 2.5rem;
+}
+
+.videos-section h3 {
+  font-size: 1.05rem;
+  margin: 0 0 1rem;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* une vidéo par ligne → aperçu bien large */
+  gap: 1.6rem;
+}
+
+.video-item {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.2rem 1.3rem;
+}
+
 .video-embed-ratio {
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16/9 */
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .video-embed-ratio iframe {
@@ -554,6 +577,12 @@ a {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.video-caption {
+  margin: 0.8rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 /* Petit ajustement mobile si besoin */
