@@ -477,7 +477,7 @@ a {
   margin: 0 0 0.45rem;
 }
 
-.p p {
+.project-card p {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.6;
@@ -872,11 +872,11 @@ body.lightbox-open {
   max-width: min(1200px, 96vw);   /* plus large sur desktop */
   max-height: min(820px, 94vh);   /* plus haut */
   width: 100%;
-  background: var(--bg-elevated);
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  padding: 1.1rem 1rem 1.4rem;
+  background: transparent;        /* plus de carte opaque */
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 1.1rem 0 1.4rem;       /* padding horizontal retiré */
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -934,12 +934,13 @@ body.lightbox-open {
   height: auto;
   max-width: 100%;
   /* pas de max-height ici → la hauteur peut dépasser, on scrollera */
-  border-radius: 12px;
-  border: 1px solid var(--border);
+  border-radius: 0;
+  border: none;                  /* plus de cadre autour de l’image */
   object-fit: contain;
   transform-origin: center center;
   transition: transform 200ms ease-out, transform-origin 200ms ease-out;
 }
+
 
 .lightbox-close {
   position: absolute;
@@ -1072,7 +1073,7 @@ body.lightbox-open {
   .lightbox-dialog {
     max-width: 94vw;
     max-height: 78vh;
-    padding: 0.9rem;
+    padding: 0.9rem 0; /* vertical seulement, pas de carte autour */
   }
 
   .lightbox-nav {
@@ -1092,7 +1093,7 @@ body.lightbox-open {
     height: 44px;
   }
 
-    .lightbox-caption {
+  .lightbox-caption {
     text-align: center;
     font-size: 0.85rem;
   }
@@ -1100,8 +1101,9 @@ body.lightbox-open {
   .lightbox-toolbar {
     justify-content: center;
   }
-  
+
   .lightbox-scroll-hint {
     font-size: 0.75rem;
   }
 }
+
