@@ -593,7 +593,8 @@ a {
   overflow: hidden;
 }
 
-.video-embed-ratio iframe {
+.video-embed-ratio iframe,
+.video-embed-ratio video {
   position: absolute;
   inset: 0;
   width: 100%;
