@@ -477,7 +477,7 @@ a {
   margin: 0 0 0.45rem;
 }
 
-.project-card p {
+.p p {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.6;
@@ -528,6 +528,42 @@ a {
 .project-card.category-card .project-link {
   margin-top: auto;
 }
+
+/* Carte vidéo – catégorie "Quelques vidéos" */
+
+.project-card.video-card {
+  flex-direction: column;
+}
+
+/* Conteneur de la vidéo dans la carte */
+.project-video-embed {
+  border-top: 1px solid var(--border);
+  background: #000;
+}
+
+/* Ratio 16:9 responsive pour la vidéo */
+.video-embed-ratio {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16/9 */
+}
+
+.video-embed-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Petit ajustement mobile si besoin */
+@media (max-width: 640px) {
+  .project-card.video-card .project-content {
+    padding-bottom: 1.1rem;
+  }
+}
+
+
 
 /* Points dans les cartes projets (catégories) */
 .project-points {
