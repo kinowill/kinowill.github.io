@@ -970,20 +970,21 @@ body.lightbox-open {
 .lightbox-dialog {
   position: relative;
   max-width: min(1440px, 98vw);   /* plus large sur desktop */
-  max-height: min(900px, 96vh);   /* plus haut */
+  max-height: min(900px, 98vh);   /* un peu plus haut que 96vh */
   width: 100%;
   background: transparent;        /* plus de carte opaque */
   border-radius: 0;
   border: none;
   box-shadow: none;
-  padding: 1.1rem 0 1.4rem;       /* padding horizontal retiré */
+  padding: 0.4rem 0 0.6rem;       /* AVANT: 1.1rem 0 1.4rem → beaucoup moins de marge haut/bas */
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.3rem;                    /* AVANT: 0.6rem */
   transform: scale(0.96);
   opacity: 0;
   transition: opacity 220ms ease-out, transform 220ms ease-out;
 }
+
 
 /* Conteneur de l’image :
    réserve de place pour les flèches + loupe */
@@ -993,20 +994,21 @@ body.lightbox-open {
   display: flex;
   align-items: flex-start;    /* le haut de l’image colle en haut du wrapper */
   justify-content: center;
-    padding: 0 1.4rem;          /* espace pour les flèches gauche/droite */
+  padding: 0 0.6rem;          /* AVANT: 0 1.4rem → moins de marge latérale, pas de marge verticale ici */
   box-sizing: border-box;
   overflow: auto;             /* scroll vertical si l’image est plus haute */
   cursor: zoom-in;            /* loupe + par défaut */
   position: relative;
 }
 
+
 .lightbox-scroll-hint {
-  margin-top: 0.35rem;
-  font-size: 0.78rem;
+  margin-top: 0.15rem;        /* AVANT: 0.35rem */
+  font-size: 0.76rem;
   color: var(--muted);
   text-align: center;
   opacity: 0;
-  pointer-events: none; /* on ne gêne aucun clic */
+  pointer-events: none;
   transition: opacity 200ms ease-out;
 }
 
@@ -1043,19 +1045,19 @@ body.lightbox-open {
 
 /* Barre compacte sous l’image : légende + compteur + bouton */
 .lightbox-meta {
-  margin-top: 0.35rem;
-  padding: 0 1.4rem;
+  margin-top: 0.15rem;        /* AVANT: 0.35rem */
+  padding: 0 0.8rem;          /* AVANT: 0 1.4rem */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .lightbox-caption {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.8rem;          /* plus petit */
   color: var(--muted);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .lightbox-meta-right {
@@ -1189,8 +1191,8 @@ body.lightbox-open {
 @media (max-width: 640px) {
   .lightbox-dialog {
     max-width: 94vw;
-    max-height: 78vh;
-    padding: 0.9rem 0; /* vertical seulement, pas de carte autour */
+    max-height: 86vh;      /* AVANT: 78vh → plus de place pour l’image */
+    padding: 0.3rem 0;     /* AVANT: 0.9rem 0 */
   }
 
   .lightbox-nav {
@@ -1199,7 +1201,7 @@ body.lightbox-open {
   }
 
     .lightbox-image-wrapper {
-    padding: 0 1.2rem;
+    padding: 0 0.5rem;     /* AVANT: 0 1.2rem */
     min-height: 0;
   }
 
@@ -1211,7 +1213,7 @@ body.lightbox-open {
 
   .lightbox-caption {
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
   }
 
   .lightbox-toolbar {
@@ -1219,7 +1221,7 @@ body.lightbox-open {
   }
 
   .lightbox-scroll-hint {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
 
