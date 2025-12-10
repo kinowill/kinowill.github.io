@@ -1114,19 +1114,6 @@ body.lightbox-open {
   right: 0.75rem;
 }
 
-.lightbox-counter {
-  font-size: 0.82rem;
-  color: var(--muted);
-  padding-inline: 0.2rem;
-}
-
-.lightbox-caption {
-  margin-top: 0.55rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text);
-}
-
 .lightbox-toolbar {
   display: flex;
   justify-content: flex-end;
@@ -1139,13 +1126,14 @@ body.lightbox-open {
   border-radius: 999px;
   border: 1px solid var(--accent);
   color: #fff;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 500;
-  padding: 0.35rem 0.9rem;
+  padding: 0.25rem 0.8rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  white-space: nowrap;
 }
 
 .lightbox-toggle-thumbs:hover,
@@ -1155,11 +1143,12 @@ body.lightbox-open {
 }
 
 .lightbox-thumbs {
-  margin-top: 0.45rem;
+  margin-top: 0.3rem; /* au lieu de 0.45rem */
   display: none;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
+
 
 .lightbox-thumbs.is-open {
   display: flex;
