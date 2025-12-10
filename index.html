@@ -423,41 +423,42 @@
     </section>
 
     
-    <!-- Lightbox projets -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-overlay" data-lightbox-close></div>
-    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galerie de travaux">
-      <button class="lightbox-close" type="button" aria-label="Fermer la galerie" data-lightbox-close>×</button>
+        <!-- Lightbox projets -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-overlay" data-lightbox-close></div>
 
-      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Image précédente">‹</button>
-      <button class="lightbox-nav lightbox-next" type="button" aria-label="Image suivante">›</button>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galerie de travaux">
+        <button class="lightbox-close" type="button" aria-label="Fermer la galerie" data-lightbox-close>×</button>
 
-      <div class="lightbox-image-wrapper">
-        <img src="" alt="" class="lightbox-image" loading="lazy">
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="Image précédente">‹</button>
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="Image suivante">›</button>
+
+        <div class="lightbox-image-wrapper">
+          <img src="" alt="" class="lightbox-image" loading="lazy">
+        </div>
+
+        <!-- Indication de scroll quand l’image dépasse -->
+        <div class="lightbox-scroll-hint">
+          Faire défiler pour voir la suite
+          <span class="lightbox-scroll-arrow">↓</span>
+        </div>
+
+        <!-- Barre compacte : titre + compteur + bouton -->
+        <div class="lightbox-meta">
+          <div class="lightbox-caption" aria-live="polite"></div>
+
+          <div class="lightbox-meta-right">
+            <span class="lightbox-counter"></span>
+            <button class="lightbox-toggle-thumbs" type="button">
+              Afficher la bibliothèque
+            </button>
+          </div>
+        </div>
+
+        <!-- Bibliothèque de vignettes -->
+        <div class="lightbox-thumbs" aria-hidden="true"></div>
       </div>
-
-      <!-- Indication de scroll quand l’image dépasse -->
-      <div class="lightbox-scroll-hint">
-        Faire défiler pour voir la suite
-        <span class="lightbox-scroll-arrow">↓</span>
-      </div>
-
-      <!-- Titre de l’image (basé sur le alt) -->
-      <div class="lightbox-caption" aria-live="polite"></div>
-
-
-      <div class="lightbox-toolbar">
-        <button class="lightbox-toggle-thumbs" type="button">
-          Afficher la bibliothèque
-        </button>
-      </div>
-
-      <div class="lightbox-thumbs" aria-hidden="true"></div>
-
-      <div class="lightbox-counter"></div>
-
     </div>
-  </div>
    
   </main>
 
