@@ -1041,6 +1041,34 @@ body.lightbox-open {
   transition: transform 200ms ease-out, transform-origin 200ms ease-out;
 }
 
+/* Barre compacte sous l’image : légende + compteur + bouton */
+.lightbox-meta {
+  margin-top: 0.35rem;
+  padding: 0 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.lightbox-caption {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.lightbox-meta-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.lightbox-counter {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
 
 .lightbox-close {
   position: absolute;
