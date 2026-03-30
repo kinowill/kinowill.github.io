@@ -1,252 +1,296 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-<meta charset="utf-8"/>
-<title>Émilien Wienin · UX/UI Designer &amp; Concept Artist</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Portfolio d'Émilien Wienin, UX/UI designer, concept artist et illustrateur basé à Montpellier." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="style.css" rel="stylesheet"/>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Émilien Wienin · UX/UI Designer & Concept Artist</title>
+  <meta name="description" content="Portfolio d'Émilien Wienin, UX/UI designer, concept artist et illustrateur basé à Montpellier.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-refactored.css">
 </head>
 <body>
-<div class="bg-orbs">
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-</div>
-<header class="site-header reveal">
-<div class="header-inner">
-<a class="brand" href="#">EW<span>.</span></a>
-<nav class="nav-links">
-<a href="#about">À propos</a>
-<a href="#skills">Compétences</a>
-<a href="#projects">Projets</a>
-<a href="#contact">Contact</a>
-</nav>
-<a class="btn btn-secondary btn-compact" href="assets/CV-Emilien-Wienin.pdf" target="_blank">CV PDF</a>
-</div>
-</header>
-<main>
-<section class="hero container">
-<div class="hero-grid">
-<div class="hero-text reveal">
-<div class="badge">Disponibilité : 2025–2027</div>
-<h1>Je conçois des expériences digitales complètes.</h1>
-<p>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <header class="site-header reveal">
+    <div class="header-inner">
+      <a href="#" class="brand" aria-label="Retour en haut de page">EW<span>.</span></a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="assets/CV-Emilien-Wienin.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-compact">
+        CV PDF
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="content-grid content-grid-hero">
+        <div class="hero-text reveal">
+          <p class="badge">Disponibilité : 2025-2027</p>
+          <h1>Je conçois des expériences digitales complètes.</h1>
+          <p class="hero-description">
             Concepteur Designer UX/UI à Montpellier, j’accompagne des marques
             e-commerce dans la refonte de leur expérience : architecture de parcours,
             maquettes Figma, intégration Shopify et optimisation de l'écosystème digital.
           </p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="#projects">Voir mes projets</a>
-<a class="btn btn-secondary" href="#contact">Me contacter</a>
-</div>
-</div>
-<div class="hero-visual reveal delay-2">
-<img alt="Portrait d'Émilien Wienin" src="assets/portrait-emilien.png"/>
-</div>
-</div>
-</section>
-<section class="section container" id="about">
-<div class="reveal">
-<h2 class="section-title">À propos</h2>
-<p class="section-subtitle">Contexte &amp; parcours</p>
-</div>
-<div class="hero-grid">
-<div class="card reveal delay-1">
-<h3 class="about-name">Émilien Wienin</h3>
-<p class="about-text">
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+            <a href="#contact" class="btn btn-secondary">Me contacter</a>
+          </div>
+        </div>
+
+        <figure class="hero-visual reveal delay-2">
+          <img src="assets/portrait-emilien.png" alt="Portrait d'Émilien Wienin">
+        </figure>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <div class="section-header reveal">
+        <h2 class="section-title">À propos</h2>
+        <p class="section-subtitle">Contexte & parcours</p>
+      </div>
+
+      <div class="content-grid">
+        <article class="card reveal delay-1">
+          <h3 class="card-heading-lg">Émilien Wienin</h3>
+          <p class="text-muted text-block">
             24 ans, basé à Montpellier. Après un <strong>BTS Systèmes Numériques</strong> et un
-            <strong>Bachelor Concept Art &amp; Illustration</strong>, j'ai récemment terminé un
+            <strong>Bachelor Concept Art & Illustration</strong>, j'ai récemment terminé un
             <strong>Bachelor Concepteur Designer UX/UI</strong> en alternance.
           </p>
-<p class="about-text">
-            Mon profil mêle UX/UI, graphisme et production de contenus. Je conçois des parcours, intègre les interfaces et crée les supports qui les accompagnent pour construire des univers de marque cohérents.
+          <p class="text-muted">
+            Mon profil mêle UX/UI, graphisme et production de contenus. Je conçois des parcours,
+            intègre les interfaces et crée les supports qui les accompagnent pour construire des
+            univers de marque cohérents.
           </p>
-</div>
-<div class="card reveal delay-2 experience-card">
-<div class="badge badge-alt">Dernière Expérience</div>
-<h3 class="card-title">Waldos Legend</h3>
-<p class="card-text">Lors de ma dernière alternance, j’ai notamment travaillé sur :</p>
-<ul class="skill-card">
-<li>Refonte et optimisation du site e-commerce (Shopify, UX/UI)</li>
-<li>Création de visuels, bannières et contenus social media</li>
-<li>Conception d’emails marketing et campagnes promotionnelles</li>
-</ul>
-</div>
-</div>
-</section>
-<section class="section container" id="skills">
-<div class="reveal">
-<h2 class="section-title">Expertise</h2>
-<p class="section-subtitle">Ce que j'apporte à vos projets</p>
-</div>
-<div class="skills-grid">
-<article class="card skill-card reveal">
-<h3>UX &amp; Produit Digital</h3>
-<ul>
-<li>Analyse de besoins et objectifs métier</li>
-<li>Recherche utilisateur et user flows</li>
-<li>Structuration des contenus (arbo, wireframes)</li>
-<li>Amélioration continue de l’expérience</li>
-</ul>
-</article>
-<article class="card skill-card reveal delay-1">
-<h3>UI &amp; Design System</h3>
-<ul>
-<li>Maquettes haute fidélité (Figma) web &amp; mobile</li>
-<li>Création de bibliothèques de composants</li>
-<li>Responsive design et hiérarchie visuelle</li>
-<li>Prototypes interactifs</li>
-</ul>
-</article>
-<article class="card skill-card reveal delay-2">
-<h3>E-commerce &amp; Marketing</h3>
-<ul>
-<li>Intégration front Shopify (HTML, CSS, Liquid)</li>
-<li>Optimisation SEO on-page</li>
-<li>Emailing &amp; automation (Klaviyo)</li>
-<li>Visuels campagnes Meta Ads</li>
-</ul>
-</article>
-<article class="card skill-card reveal delay-3">
-<h3>Visuels &amp; Illustration</h3>
-<ul>
-<li>Graphisme (Ps, Ai, Id)</li>
-<li>Retouche photo et montage vidéo</li>
-<li>Concept art &amp; illustration</li>
-<li>Supports print (affiches, packaging)</li>
-</ul>
-</article>
-</div>
-</section>
-<section class="section container" id="projects">
-<div class="reveal">
-<h2 class="section-title">Travaux</h2>
-<p class="section-subtitle">Études de cas et galeries créatives</p>
-</div>
-<article class="card project-hero reveal">
-<div>
-<div class="badge">Étude de cas complète</div>
-<h3 class="project-hero-title">Waldos Legend</h3>
-<p class="project-hero-text">
-            Refonte globale du site &amp; écosystème marketing. Audit de l’existant, structuration des parcours d’achat, conception Figma et intégration Shopify (HTML/CSS/Liquid). 
+        </article>
+
+        <article class="card card-accent reveal delay-2">
+          <p class="badge badge-secondary">Dernière expérience</p>
+          <h3 class="card-heading">Waldos Legend</h3>
+          <p class="text-muted text-block">Lors de ma dernière alternance, j’ai notamment travaillé sur :</p>
+          <ul class="skill-card skill-list">
+            <li>Refonte et optimisation du site e-commerce (Shopify, UX/UI)</li>
+            <li>Création de visuels, bannières et contenus social media</li>
+            <li>Conception d’emails marketing et campagnes promotionnelles</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Expertise</h2>
+        <p class="section-subtitle">Ce que j'apporte à vos projets</p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="card skill-card reveal">
+          <h3>UX & Produit Digital</h3>
+          <ul>
+            <li>Analyse de besoins et objectifs métier</li>
+            <li>Recherche utilisateur et user flows</li>
+            <li>Structuration des contenus (arbo, wireframes)</li>
+            <li>Amélioration continue de l’expérience</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card reveal delay-1">
+          <h3>UI & Design System</h3>
+          <ul>
+            <li>Maquettes haute fidélité (Figma) web & mobile</li>
+            <li>Création de bibliothèques de composants</li>
+            <li>Responsive design et hiérarchie visuelle</li>
+            <li>Prototypes interactifs</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card reveal delay-2">
+          <h3>E-commerce & Marketing</h3>
+          <ul>
+            <li>Intégration front Shopify (HTML, CSS, Liquid)</li>
+            <li>Optimisation SEO on-page</li>
+            <li>Emailing & automation (Klaviyo)</li>
+            <li>Visuels campagnes Meta Ads</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card reveal delay-3">
+          <h3>Visuels & Illustration</h3>
+          <ul>
+            <li>Graphisme (Ps, Ai, Id)</li>
+            <li>Retouche photo et montage vidéo</li>
+            <li>Concept art & illustration</li>
+            <li>Supports print (affiches, packaging)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Travaux</h2>
+        <p class="section-subtitle">Études de cas et galeries créatives</p>
+      </div>
+
+      <article class="card project-feature reveal">
+        <div class="project-feature__content">
+          <p class="badge">Étude de cas complète</p>
+          <h3 class="project-feature__title">Waldos Legend</h3>
+          <p class="text-muted project-feature__text">
+            Refonte globale du site & écosystème marketing. Audit de l’existant, structuration des
+            parcours d’achat, conception Figma et intégration Shopify (HTML/CSS/Liquid).
             Mise en place d'une stratégie de communication : Klaviyo, Meta Ads et contenus visuels.
           </p>
-<a class="btn btn-primary" href="assets/dossier-projet-waldos.pdf" target="_blank">Consulter le dossier PDF</a>
-</div>
-<div>
-<img alt="Illustration Waldos Legend" src="assets/projet-waldos-legend.webp"/>
-</div>
-</article>
-<div class="projects-grid">
-<article class="card project-card reveal">
-<div class="badge badge-muted">UX/UI · Produit</div>
-<h3>Maquettes d’interface</h3>
-<p>Sélection de maquettes d’interfaces pour des projets e-commerce (Desktop, Mobile, Prototypes).</p>
-<a class="btn btn-secondary project-link" data-gallery="uxui" href="#">Ouvrir la galerie</a>
-</article>
-<article class="card project-card reveal delay-1">
-<div class="badge badge-muted">Marketing Digital</div>
-<h3>Campagnes &amp; Ads</h3>
-<p>Supports créés pour l’acquisition : Templates emails Klaviyo, bannières et encarts promotionnels.</p>
-<a class="btn btn-secondary project-link" data-gallery="marketing" href="#">Ouvrir la galerie</a>
-</article>
-<article class="card project-card reveal delay-2">
-<div class="badge badge-muted">Identité · Print</div>
-<h3>Visuels de marque</h3>
-<p>Créations visuelles, concept art, photographie produit et supports print pour installer un univers.</p>
-<a class="btn btn-secondary project-link" data-gallery="illu" href="#">Ouvrir la galerie</a>
-</article>
-</div>
-<div class="reveal motion-section">
-<h3 class="subsection-title">Motion &amp; Montage Vidéo</h3>
-<div class="videos-carousel">
-<button class="videos-nav videos-prev">‹</button>
-<div class="videos-track">
-<article class="video-item is-active">
-<div class="video-embed-ratio">
-<iframe allow="autoplay; fullscreen; picture-in-picture" src="https://player.vimeo.com/video/1144891837?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"></iframe>
-</div>
-<p class="video-caption">Montage vidéo &amp; motion pour Projet Waldos Legend.</p>
-</article>
-<article class="video-item">
-<div class="video-embed-ratio">
-<video controls="" preload="metadata"><source src="assets/5.mp4" type="video/mp4"/></video>
-</div>
-<p class="video-caption">Démo After Effects x Premiere Pro</p>
-</article>
-<article class="video-item">
-<div class="video-embed-ratio">
-<video controls="" preload="metadata"><source src="assets/4.mp4" type="video/mp4"/></video>
-</div>
-<p class="video-caption">Animation 2D</p>
-</article>
-<article class="video-item">
-<div class="video-embed-ratio">
-<video controls="" preload="metadata"><source src="assets/3.mp4" type="video/mp4"/></video>
-</div>
-<p class="video-caption">Autre démo After Effects</p>
-</article>
-<article class="video-item">
-<div class="video-embed-ratio">
-<video controls="" preload="metadata"><source src="assets/2.mp4" type="video/mp4"/></video>
-</div>
-<p class="video-caption">Test rig After Effect.</p>
-</article>
-<article class="video-item">
-<div class="video-embed-ratio">
-<video controls="" preload="metadata"><source src="assets/1.mp4" type="video/mp4"/></video>
-</div>
-<p class="video-caption">Démo After Effects</p>
-</article>
-</div>
-<button class="videos-nav videos-next">›</button>
-</div>
-</div>
-</section>
-<section class="section container" id="contact">
-<div class="card contact-inner reveal contact-card">
-<h2 class="section-title contact-title">Prêt à collaborer ?</h2>
-<p class="contact-text">
-          Disponible pour des projets UX/UI, concept art, illustration ou une poursuite d’études en Mastère avec alternance. N’hésitez pas à me contacter.
+          <a href="assets/dossier-projet-waldos.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+            Consulter le dossier PDF
+          </a>
+        </div>
+
+        <div class="project-feature__media">
+          <img src="assets/projet-waldos-legend.webp" alt="Illustration Waldos Legend">
+        </div>
+      </article>
+
+      <div class="projects-grid">
+        <article class="card project-card reveal">
+          <p class="badge badge-ghost">UX/UI · Produit</p>
+          <h3>Maquettes d’interface</h3>
+          <p>Sélection de maquettes d’interfaces pour des projets e-commerce (Desktop, Mobile, Prototypes).</p>
+          <a href="#" class="btn btn-secondary project-link" data-gallery="uxui">Ouvrir la galerie</a>
+        </article>
+
+        <article class="card project-card reveal delay-1">
+          <p class="badge badge-ghost">Marketing Digital</p>
+          <h3>Campagnes & Ads</h3>
+          <p>Supports créés pour l’acquisition : Templates emails Klaviyo, bannières et encarts promotionnels.</p>
+          <a href="#" class="btn btn-secondary project-link" data-gallery="marketing">Ouvrir la galerie</a>
+        </article>
+
+        <article class="card project-card reveal delay-2">
+          <p class="badge badge-ghost">Identité · Print</p>
+          <h3>Visuels de marque</h3>
+          <p>Créations visuelles, concept art, photographie produit et supports print pour installer un univers.</p>
+          <a href="#" class="btn btn-secondary project-link" data-gallery="illu">Ouvrir la galerie</a>
+        </article>
+      </div>
+
+      <div class="motion-section reveal">
+        <h3 class="subsection-title">Motion & Montage Vidéo</h3>
+
+        <div class="videos-carousel">
+          <button class="videos-nav videos-prev" aria-label="Vidéo précédente">‹</button>
+
+          <div class="videos-track">
+            <article class="video-item is-active">
+              <div class="video-embed-ratio">
+                <iframe src="https://player.vimeo.com/video/1144891837?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" title="Montage vidéo Waldos Legend"></iframe>
+              </div>
+              <p class="video-caption">Montage vidéo & motion pour Projet Waldos Legend.</p>
+            </article>
+
+            <article class="video-item">
+              <div class="video-embed-ratio">
+                <video controls preload="metadata"><source src="assets/5.mp4" type="video/mp4"></video>
+              </div>
+              <p class="video-caption">Démo After Effects x Premiere Pro</p>
+            </article>
+
+            <article class="video-item">
+              <div class="video-embed-ratio">
+                <video controls preload="metadata"><source src="assets/4.mp4" type="video/mp4"></video>
+              </div>
+              <p class="video-caption">Animation 2D</p>
+            </article>
+
+            <article class="video-item">
+              <div class="video-embed-ratio">
+                <video controls preload="metadata"><source src="assets/3.mp4" type="video/mp4"></video>
+              </div>
+              <p class="video-caption">Autre démo After Effects</p>
+            </article>
+
+            <article class="video-item">
+              <div class="video-embed-ratio">
+                <video controls preload="metadata"><source src="assets/2.mp4" type="video/mp4"></video>
+              </div>
+              <p class="video-caption">Test rig After Effect.</p>
+            </article>
+
+            <article class="video-item">
+              <div class="video-embed-ratio">
+                <video controls preload="metadata"><source src="assets/1.mp4" type="video/mp4"></video>
+              </div>
+              <p class="video-caption">Démo After Effects</p>
+            </article>
+          </div>
+
+          <button class="videos-nav videos-next" aria-label="Vidéo suivante">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <div class="card card-outline contact-card contact-inner reveal">
+        <h2 class="section-title contact-title">Prêt à collaborer ?</h2>
+        <p class="contact-text">
+          Disponible pour des projets UX/UI, concept art, illustration ou une poursuite d’études en
+          Mastère avec alternance. N’hésitez pas à me contacter.
         </p>
-<div class="contact-actions">
-<a class="btn btn-primary" href="#" id="email-link">M’écrire un mail</a>
-<a class="btn btn-secondary" href="#" id="phone-link"></a>
-</div>
-<div class="contact-socials">
-<a class="badge badge-transparent" href="https://www.linkedin.com/in/%C3%A9milien-wienin-7b643a220/" target="_blank">LinkedIn</a>
-<a class="badge badge-transparent" href="https://www.instagram.com/lavande_outremer/" target="_blank">Instagram</a>
-</div>
-</div>
-</section>
-<div class="lightbox" id="lightbox">
-<div class="lightbox-overlay" data-lightbox-close=""></div>
-<div class="lightbox-dialog">
-<button class="lightbox-close" data-lightbox-close="">×</button>
-<button class="lightbox-nav lightbox-prev">‹</button>
-<div class="lightbox-image-wrapper">
-<img alt="" class="lightbox-image" src=""/>
-</div>
-<button class="lightbox-nav lightbox-next">›</button>
-<div class="lightbox-meta">
-<div class="lightbox-caption"></div>
-<div class="lightbox-counter"></div>
-</div>
-<div class="lightbox-thumbs"></div>
-</div>
-</div>
-</main>
-<footer class="footer">
-<div class="container">
-<p>© <span id="year"></span> Émilien Wienin – Portfolio UX/UI &amp; Concept Art.</p>
-</div>
-</footer>
-<script>
-    // 1. SCROLL REVEAL ANIMATIONS
+
+        <div class="contact-actions">
+          <a href="#" class="btn btn-primary" id="email-link">M’écrire un mail</a>
+          <a href="#" class="btn btn-secondary" id="phone-link"></a>
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/%C3%A9milien-wienin-7b643a220/" target="_blank" rel="noopener" class="badge badge-transparent">LinkedIn</a>
+          <a href="https://www.instagram.com/lavande_outremer/" target="_blank" rel="noopener" class="badge badge-transparent">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-overlay" data-lightbox-close></div>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galerie d’images">
+        <button class="lightbox-close" data-lightbox-close aria-label="Fermer la galerie">×</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Image précédente">‹</button>
+
+        <div class="lightbox-image-wrapper">
+          <img src="" alt="" class="lightbox-image">
+        </div>
+
+        <button class="lightbox-nav lightbox-next" aria-label="Image suivante">›</button>
+
+        <div class="lightbox-meta">
+          <div class="lightbox-caption"></div>
+          <div class="lightbox-counter"></div>
+        </div>
+
+        <div class="lightbox-thumbs"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Émilien Wienin - Portfolio UX/UI & Concept Art.</p>
+    </div>
+  </footer>
+
+  <script>
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -255,40 +299,42 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { rootMargin: "0px 0px -100px 0px", threshold: 0.1 });
-    
-    revealElements.forEach(el => revealObserver.observe(el));
+    }, { rootMargin: '0px 0px -100px 0px', threshold: 0.1 });
 
-    // 2. UTILITAIRES DE BASE (Date, Obfuscation Contact)
+    revealElements.forEach(element => revealObserver.observe(element));
+
     document.getElementById('year').textContent = new Date().getFullYear();
-    
-    (function () {
+
+    (() => {
       const phoneLink = document.getElementById('phone-link');
+      const emailLink = document.getElementById('email-link');
+
       if (phoneLink) {
         const parts = ['+33', '7', '50', '42', '77', '98'];
         phoneLink.textContent = `0${parts[1]} ${parts[2]} ${parts[3]} ${parts[4]} ${parts[5]}`;
         phoneLink.href = 'tel:' + parts.join('');
       }
-      const emailLink = document.getElementById('email-link');
-      if (emailLink) emailLink.href = 'mailto:emil30w@gmail.com';
+
+      if (emailLink) {
+        emailLink.href = 'mailto:emil30w@gmail.com';
+      }
     })();
 
-    // 3. LOGIQUE LIGHTBOX (Conservée de ton fichier original)
-    (function () {
+    (() => {
       const galleries = {
         uxui: [
-          { src: 'assets/uxui-1.webp', alt: 'UX/UI – Maquette Figma Desktop' },
-          { src: 'assets/uxui-7.webp', alt: 'UX/UI – Maquette Figma Mobile' },
-          { src: 'assets/uxui-8.webp', alt: 'UX/UI – Menu Responsive Mobile Site e-commerce' },
-          { src: 'assets/uxui-2.webp', alt: 'UX/UI – Page Produit Site e-commerce' },
-          { src: 'assets/uxui-3.webp', alt: 'UX/UI – Exemple Carte Produit Site e-commerce' },
-          { src: 'assets/uxui-4.webp', alt: 'UX/UI – Réassurance & UGC Site e-commerce' },
-          { src: 'assets/uxui-5.webp', alt: 'UX/UI – Page Fidélité Site e-commerce' },
-          { src: 'assets/uxui-6.webp', alt: 'UX/UI – Exemple Asset Personnalisé Site e-commerce' },
-          { src: 'assets/uxui-9.webp', alt: 'UX/UI – Optimisation Métadonnées' },
-          { src: 'assets/uxui-10.webp', alt: 'UX/UI – Optimisation Images & SEO' },
-          { src: 'assets/uxui-11.webp', alt: 'UX/UI – Personnalisation Code' },
-          { src: 'assets/uxui-12.webp', alt: 'UX/UI – Autre Exemple De Maquette' }
+          { src: 'assets/uxui-1.webp', alt: 'UX/UI - Maquette Figma Desktop' },
+          { src: 'assets/uxui-7.webp', alt: 'UX/UI - Maquette Figma Mobile' },
+          { src: 'assets/uxui-8.webp', alt: 'UX/UI - Menu Responsive Mobile Site e-commerce' },
+          { src: 'assets/uxui-2.webp', alt: 'UX/UI - Page Produit Site e-commerce' },
+          { src: 'assets/uxui-3.webp', alt: 'UX/UI - Exemple Carte Produit Site e-commerce' },
+          { src: 'assets/uxui-4.webp', alt: 'UX/UI - Réassurance & UGC Site e-commerce' },
+          { src: 'assets/uxui-5.webp', alt: 'UX/UI - Page Fidélité Site e-commerce' },
+          { src: 'assets/uxui-6.webp', alt: 'UX/UI - Exemple Asset Personnalisé Site e-commerce' },
+          { src: 'assets/uxui-9.webp', alt: 'UX/UI - Optimisation Métadonnées' },
+          { src: 'assets/uxui-10.webp', alt: 'UX/UI - Optimisation Images & SEO' },
+          { src: 'assets/uxui-11.webp', alt: 'UX/UI - Personnalisation Code' },
+          { src: 'assets/uxui-12.webp', alt: 'UX/UI - Autre Exemple De Maquette' }
         ],
         marketing: [
           { src: 'assets/marketing-1.webp', alt: 'Exemple Flux Mail Klaviyo' },
@@ -296,7 +342,7 @@
           { src: 'assets/marketing-3.webp', alt: 'Exemples Mails Divers' },
           { src: 'assets/marketing-4.webp', alt: 'Exemples Mails Hebdo' },
           { src: 'assets/marketing-5.webp', alt: 'Exemples Meta Ads' },
-          { src: 'assets/marketing-13.webp', alt: 'Exemples Bannieres Site' },
+          { src: 'assets/marketing-13.webp', alt: 'Exemples Bannières Site' },
           { src: 'assets/marketing-14.png', alt: 'Itérations De Logos' },
           { src: 'assets/marketing-15.png', alt: 'Création Images Vectorielles' }
         ],
@@ -317,78 +363,111 @@
       const captionEl = lightbox.querySelector('.lightbox-caption');
       const counterEl = lightbox.querySelector('.lightbox-counter');
       const thumbsContainer = lightbox.querySelector('.lightbox-thumbs');
-      let currentGallery = null, currentIndex = 0;
+      const prevButton = lightbox.querySelector('.lightbox-prev');
+      const nextButton = lightbox.querySelector('.lightbox-next');
+      let currentGallery = null;
+      let currentIndex = 0;
 
       function updateImage() {
         const item = galleries[currentGallery][currentIndex];
         imageEl.src = item.src;
+        imageEl.alt = item.alt || '';
         captionEl.textContent = item.alt || '';
-        counterEl.textContent = (currentIndex + 1) + ' / ' + galleries[currentGallery].length;
-        
-        Array.from(thumbsContainer.children).forEach((thumb, idx) => {
-          thumb.classList.toggle('is-active', idx === currentIndex);
+        counterEl.textContent = `${currentIndex + 1} / ${galleries[currentGallery].length}`;
+
+        Array.from(thumbsContainer.children).forEach((thumb, index) => {
+          thumb.classList.toggle('is-active', index === currentIndex);
         });
       }
 
       function buildThumbs() {
         thumbsContainer.innerHTML = '';
+
         galleries[currentGallery].forEach((item, index) => {
-          const btn = document.createElement('button');
-          btn.className = 'lightbox-thumb';
-          const img = document.createElement('img');
-          img.src = item.src;
-          btn.appendChild(img);
-          btn.onclick = () => { currentIndex = index; updateImage(); };
-          thumbsContainer.appendChild(btn);
+          const button = document.createElement('button');
+          const thumbImage = document.createElement('img');
+
+          button.className = 'lightbox-thumb';
+          button.type = 'button';
+          button.setAttribute('aria-label', `Ouvrir l’image ${index + 1}`);
+          thumbImage.src = item.src;
+          thumbImage.alt = item.alt || '';
+
+          button.appendChild(thumbImage);
+          button.addEventListener('click', () => {
+            currentIndex = index;
+            updateImage();
+          });
+
+          thumbsContainer.appendChild(button);
         });
       }
 
       function openLightbox(key) {
-        currentGallery = key; currentIndex = 0;
-        buildThumbs(); updateImage();
+        currentGallery = key;
+        currentIndex = 0;
+        buildThumbs();
+        updateImage();
         lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
         lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
       }
 
       document.querySelectorAll('.project-link').forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault(); openLightbox(link.getAttribute('data-gallery'));
+        link.addEventListener('click', event => {
+          event.preventDefault();
+          openLightbox(link.getAttribute('data-gallery'));
         });
       });
 
-      lightbox.querySelector('.lightbox-prev').onclick = () => {
+      prevButton.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + galleries[currentGallery].length) % galleries[currentGallery].length;
         updateImage();
-      };
-      
-      lightbox.querySelector('.lightbox-next').onclick = () => {
+      });
+
+      nextButton.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % galleries[currentGallery].length;
         updateImage();
-      };
+      });
 
-      lightbox.querySelectorAll('[data-lightbox-close]').forEach(btn => btn.onclick = closeLightbox);
+      lightbox.querySelectorAll('[data-lightbox-close]').forEach(button => {
+        button.addEventListener('click', closeLightbox);
+      });
+
+      document.addEventListener('keydown', event => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft') prevButton.click();
+        if (event.key === 'ArrowRight') nextButton.click();
+      });
     })();
 
-    // 4. CARROUSEL VIDÉO (Simplifié et fiabilisé)
-    (function () {
+    (() => {
       const track = document.querySelector('.videos-track');
       const items = document.querySelectorAll('.video-item');
-      if (!track || items.length === 0) return;
+      const prevButton = document.querySelector('.videos-prev');
+      const nextButton = document.querySelector('.videos-next');
+
+      if (!track || items.length === 0 || !prevButton || !nextButton) return;
+
       let current = 0;
 
       function goTo(index) {
         current = (index + items.length) % items.length;
         track.style.transform = `translateX(-${current * 100}%)`;
-        items.forEach((item, idx) => item.classList.toggle('is-active', idx === current));
+        items.forEach((item, itemIndex) => {
+          item.classList.toggle('is-active', itemIndex === current);
+        });
       }
 
-      document.querySelector('.videos-prev').onclick = () => goTo(current - 1);
-      document.querySelector('.videos-next').onclick = () => goTo(current + 1);
+      prevButton.addEventListener('click', () => goTo(current - 1));
+      nextButton.addEventListener('click', () => goTo(current + 1));
     })();
   </script>
 </body>
