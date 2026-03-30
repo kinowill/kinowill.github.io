@@ -155,6 +155,45 @@ const revealElements = document.querySelectorAll('.reveal');
       });
     })();
 
+
+    (() => {
+      const header = document.querySelector('.site-header');
+      const toggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (!header || !toggle || !mobileMenu) return;
+
+      const setMenuState = isOpen => {
+        header.classList.toggle('menu-open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      };
+
+      setMenuState(false);
+
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        setMenuState(!isOpen);
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenuState(false));
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          setMenuState(false);
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+          setMenuState(false);
+        }
+      });
+    })();
+
     (() => {
       const track = document.querySelector('.videos-track');
       const items = document.querySelectorAll('.video-item');

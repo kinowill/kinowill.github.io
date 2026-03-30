@@ -27,9 +27,30 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a href="assets/CV-Emilien-Wienin.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-compact">
-        CV PDF
-      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="header-actions">
+        <a href="assets/CV-Emilien-Wienin.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-compact header-cv">
+          CV PDF
+        </a>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <nav class="mobile-menu-links" aria-label="Navigation mobile">
+          <a href="#about">À propos</a>
+          <a href="#skills">Compétences</a>
+          <a href="#projects">Projets</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="assets/CV-Emilien-Wienin.pdf" target="_blank" rel="noopener" class="btn btn-secondary mobile-menu-cv">
+          Télécharger le CV
+        </a>
+      </div>
     </div>
   </header>
 
