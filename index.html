@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Émilien Wienin · UX/UI Designer & Concept Artist</title>
-  <meta name="description" content="Portfolio d'Émilien Wienin, UX/UI designer, concept artist et illustrateur basé à Montpellier.">
+  <title>Émilien Wienin · Concepteur UX/UI · Marketing Digital · Illustration</title>
+  <meta name="description" content="Portfolio d'Émilien Wienin — profil polyvalent basé à Montpellier : UX/UI, marketing digital, e-commerce Shopify, illustration, motion et workflows IA.">
+  <meta name="theme-color" content="#030407">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="bg-orbs" aria-hidden="true">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
   </div>
 
   <header class="site-header reveal">
@@ -22,7 +24,8 @@
 
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
+        <a href="#skills">Expertise</a>
+        <a href="#parcours">Parcours</a>
         <a href="#projects">Projets</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -33,23 +36,14 @@
         <span></span>
       </button>
 
-      <div class="header-actions">
-        <a href="assets/CV-Emilien-Wienin.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-compact header-cv">
-          CV PDF
-        </a>
-      </div>
-
       <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <nav class="mobile-menu-links" aria-label="Navigation mobile">
           <a href="#about">À propos</a>
-          <a href="#skills">Compétences</a>
+          <a href="#skills">Expertise</a>
+          <a href="#parcours">Parcours</a>
           <a href="#projects">Projets</a>
           <a href="#contact">Contact</a>
         </nav>
-
-        <a href="assets/CV-Emilien-Wienin.pdf" target="_blank" rel="noopener" class="btn btn-secondary mobile-menu-cv">
-          Télécharger le CV
-        </a>
       </div>
     </div>
   </header>
@@ -58,54 +52,87 @@
     <section class="hero container">
       <div class="content-grid content-grid-hero">
         <div class="hero-text reveal">
-          <p class="badge">Disponibilité immédiate</p>
-          <h1>Je conçois des expériences digitales complètes.</h1>
+          <p class="badge"><span class="badge-dot"></span>Disponibilité immédiate</p>
+          <h1>
+            Concepteur <em>UX/UI</em>,
+            Marketing Digital
+            &amp; <em>Illustration</em>.
+          </h1>
           <p class="hero-description">
-            Concepteur Designer UX/UI à Montpellier, j’accompagne des marques
-            e-commerce dans la refonte de leur expérience : architecture de parcours,
-            maquettes Figma, intégration Shopify et optimisation de l'écosystème digital.
+            Je conçois l'expérience, je produis les visuels, je pilote le trafic.
+            Basé à Montpellier, j'accompagne des marques e-commerce et créatives sur
+            l'ensemble de leur écosystème digital — du wireframe à la campagne Meta Ads,
+            en passant par Shopify, la production de contenus et l'illustration.
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">Voir mes projets</a>
             <a href="#contact" class="btn btn-secondary">Me contacter</a>
           </div>
+
+          <ul class="hero-stats" aria-label="Chiffres clés">
+            <li>
+              <span class="hero-stat-value">6</span>
+              <span class="hero-stat-label">expertises<br>connectées</span>
+            </li>
+            <li>
+              <span class="hero-stat-value">2</span>
+              <span class="hero-stat-label">Bachelors<br>tech &amp; créa</span>
+            </li>
+            <li>
+              <span class="hero-stat-value">C1</span>
+              <span class="hero-stat-label">Anglais<br>professionnel</span>
+            </li>
+          </ul>
         </div>
 
         <figure class="hero-visual reveal delay-2">
-          <img src="assets/portrait-emilien.png" alt="Portrait d'Émilien Wienin">
+          <img src="assets/portrait-emilien.png" alt="Portrait d'Émilien Wienin" loading="eager">
+          <div class="hero-visual-glow" aria-hidden="true"></div>
         </figure>
       </div>
     </section>
 
     <section id="about" class="section container">
       <div class="section-header reveal">
-        <h2 class="section-title">À propos</h2>
-        <p class="section-subtitle">Contexte & parcours</p>
+        <p class="eyebrow">01 · À propos</p>
+        <h2 class="section-title">Un profil qui couvre toute la chaîne.</h2>
+        <p class="section-subtitle">Tech, design, marketing, illustration — formé aux quatre, à l'aise partout.</p>
       </div>
 
       <div class="content-grid">
         <article class="card reveal delay-1">
           <h3 class="card-heading-lg">Émilien Wienin</h3>
           <p class="text-muted text-block">
-            24 ans, basé à Montpellier. Après un <strong>BTS Systèmes Numériques</strong> et un
-            <strong>Bachelor Concept Art & Illustration</strong>, j'ai récemment terminé un
-            <strong>Bachelor Concepteur Designer UX/UI</strong> en alternance.
+            24 ans, basé à Montpellier. Profil <strong>polyvalent</strong> construit sur un
+            <strong>BTS Systèmes Numériques</strong>, un <strong>Bachelor Concept Art &amp; Illustration</strong>
+            puis un <strong>Bachelor UX Design &amp; Marketing Digital</strong> obtenu avec
+            <strong>Félicitations du Jury</strong>.
           </p>
           <p class="text-muted">
-            Mon profil mêle UX/UI, graphisme et production de contenus. Je conçois des parcours,
-            intègre les interfaces et crée les supports qui les accompagnent pour construire des
-            univers de marque cohérents.
+            Je conçois des parcours, j'intègre les interfaces, je produis les visuels qui
+            les habitent et je pilote les campagnes qui les font tourner. Le tout avec une
+            exigence de cohérence : une marque se raconte partout pareil.
           </p>
+
+          <ul class="traits">
+            <li>Créativité</li>
+            <li>Adaptabilité</li>
+            <li>Patience</li>
+          </ul>
         </article>
 
         <article class="card card-accent reveal delay-2">
-          <p class="badge badge-secondary">Dernière expérience</p>
+          <p class="badge badge-secondary">Dernière expérience · Alternance</p>
           <h3 class="card-heading">Waldos Legend</h3>
-          <p class="text-muted text-block">Lors de ma dernière alternance, j’ai notamment travaillé sur :</p>
+          <p class="text-muted text-block">
+            Un an d'alternance en tant que Concepteur Designer UX/UI pour cette marque
+            e-commerce CBD. J'y ai notamment pris en charge :
+          </p>
           <ul class="skill-card skill-list">
-            <li>Refonte et optimisation du site e-commerce (Shopify, UX/UI)</li>
-            <li>Création de visuels, bannières et contenus social media</li>
-            <li>Conception d’emails marketing et campagnes promotionnelles</li>
+            <li>Refonte complète du site Shopify (Figma, intégration HTML/CSS/Liquid, SEO)</li>
+            <li>Stratégie de communication : social media, emailing Klaviyo, Meta Ads</li>
+            <li>Production de tous les visuels : bannières, contenus social, emails, print</li>
+            <li>Analyse concurrentielle et hiérarchisation de l'offre e-commerce</li>
           </ul>
         </article>
       </div>
@@ -113,57 +140,199 @@
 
     <section id="skills" class="section container">
       <div class="section-header reveal">
-        <h2 class="section-title">Expertise</h2>
-        <p class="section-subtitle">Ce que j'apporte à vos projets</p>
+        <p class="eyebrow">02 · Expertise</p>
+        <h2 class="section-title">Ce que j'apporte à un projet.</h2>
+        <p class="section-subtitle">Six domaines, un même fil rouge : livrer une marque cohérente de bout en bout.</p>
       </div>
 
       <div class="skills-grid">
         <article class="card skill-card reveal">
-          <h3>UX & Produit Digital</h3>
+          <span class="skill-card-index">01</span>
+          <h3>UX &amp; Produit Digital</h3>
           <ul>
-            <li>Analyse de besoins et objectifs métier</li>
-            <li>Recherche utilisateur et user flows</li>
-            <li>Structuration des contenus (arbo, wireframes)</li>
-            <li>Amélioration continue de l’expérience</li>
+            <li>Analyse des besoins et objectifs métier</li>
+            <li>Recherche utilisateur &amp; user flows</li>
+            <li>Architecture d'information, arbo, wireframes</li>
+            <li>Amélioration continue de l'expérience</li>
           </ul>
         </article>
 
         <article class="card skill-card reveal delay-1">
-          <h3>UI & Design System</h3>
+          <span class="skill-card-index">02</span>
+          <h3>UI &amp; Design System</h3>
           <ul>
-            <li>Maquettes haute fidélité (Figma) web & mobile</li>
-            <li>Création de bibliothèques de composants</li>
-            <li>Responsive design et hiérarchie visuelle</li>
+            <li>Maquettes haute fidélité Figma (web &amp; mobile)</li>
+            <li>Bibliothèques de composants &amp; variantes</li>
+            <li>Responsive design, hiérarchie visuelle</li>
             <li>Prototypes interactifs</li>
           </ul>
         </article>
 
         <article class="card skill-card reveal delay-2">
-          <h3>E-commerce & Marketing</h3>
+          <span class="skill-card-index">03</span>
+          <h3>Marketing Digital &amp; E-commerce</h3>
           <ul>
-            <li>Intégration front Shopify (HTML, CSS, Liquid)</li>
-            <li>Optimisation SEO on-page</li>
-            <li>Emailing & automation (Klaviyo)</li>
-            <li>Visuels campagnes Meta Ads</li>
+            <li>Stratégie acquisition &amp; rétention</li>
+            <li>SEO on-page, tracking Google Analytics&nbsp;4</li>
+            <li>Emailing &amp; automation Klaviyo (flow &amp; flux)</li>
+            <li>Campagnes Meta Ads, visuels publicitaires</li>
           </ul>
         </article>
 
         <article class="card skill-card reveal delay-3">
-          <h3>Visuels & Illustration</h3>
+          <span class="skill-card-index">04</span>
+          <h3>Shopify &amp; IA appliquée</h3>
           <ul>
-            <li>Graphisme (Ps, Ai, Id)</li>
-            <li>Retouche photo et montage vidéo</li>
-            <li>Concept art & illustration</li>
-            <li>Supports print (affiches, packaging)</li>
+            <li>Shopify : HTML, CSS, Liquid</li>
+            <li>Prompt engineering &amp; cadrage IA</li>
+            <li>Outils agentiques, automatisations, workflows IA</li>
+            <li>GitHub, GitHub Pages</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card reveal">
+          <span class="skill-card-index">05</span>
+          <h3>Graphisme &amp; Illustration</h3>
+          <ul>
+            <li>Suite Adobe : Photoshop, Illustrator, InDesign</li>
+            <li>Illustration &amp; concept art (Clip Studio Paint)</li>
+            <li>Retouche photo, compositing</li>
+            <li>Print : affiches, flyers, magazines, packaging</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card reveal delay-1">
+          <span class="skill-card-index">06</span>
+          <h3>Motion &amp; Vidéo</h3>
+          <ul>
+            <li>Motion design After Effects</li>
+            <li>Montage vidéo Premiere Pro, Sony Vegas</li>
+            <li>Formats courts, transitions et habillages</li>
+            <li>Animation 2D sous OpenToonz</li>
           </ul>
         </article>
       </div>
+
+      <div class="certifications reveal">
+        <p class="eyebrow eyebrow-inline">Certifications &amp; reconnaissances</p>
+        <div class="cert-grid">
+          <div class="cert-chip">
+            <span class="cert-chip-label">TOSA Photoshop</span>
+            <span class="cert-chip-value">723<span class="cert-chip-total">/1000</span></span>
+          </div>
+          <div class="cert-chip">
+            <span class="cert-chip-label">TOSA Illustrator</span>
+            <span class="cert-chip-value">602<span class="cert-chip-total">/1000</span></span>
+          </div>
+          <div class="cert-chip">
+            <span class="cert-chip-label">TOSA InDesign</span>
+            <span class="cert-chip-value">754<span class="cert-chip-total">/1000</span></span>
+          </div>
+          <div class="cert-chip">
+            <span class="cert-chip-label">Google Analytics GA4</span>
+            <span class="cert-chip-value">80<span class="cert-chip-total">/100</span></span>
+          </div>
+          <div class="cert-chip cert-chip-accent">
+            <span class="cert-chip-label">Anglais</span>
+            <span class="cert-chip-value">C1</span>
+          </div>
+          <div class="cert-chip cert-chip-award">
+            <span class="cert-chip-label">Bachelor UX &amp; Marketing</span>
+            <span class="cert-chip-value">Félicitations du Jury</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="parcours" class="section container">
+      <div class="section-header reveal">
+        <p class="eyebrow">03 · Parcours</p>
+        <h2 class="section-title">Un chemin tech &amp; créatif, assumé.</h2>
+        <p class="section-subtitle">Du BTS systèmes numériques au Bachelor UX/Marketing — chaque étape nourrit la suivante.</p>
+      </div>
+
+      <ol class="timeline reveal">
+        <li class="timeline-item timeline-item-highlight">
+          <span class="timeline-dot"></span>
+          <div class="timeline-period">2024 — 2025</div>
+          <div class="timeline-body">
+            <p class="timeline-eyebrow">Formation · Alternance</p>
+            <h3>Bachelor UX Design &amp; Marketing Digital</h3>
+            <p class="timeline-meta">LiveCampus · Titre RNCP niveau 6 · <strong>Félicitations du Jury</strong></p>
+            <p>En alternance chez <strong>Waldos Legend</strong> (e-commerce, Montpellier) :
+               refonte Shopify, stratégie emailing Klaviyo, campagnes Meta Ads, production
+               de contenus.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-period">2021 — 2024</div>
+          <div class="timeline-body">
+            <p class="timeline-eyebrow">Formation</p>
+            <h3>Bachelor Concept Art &amp; Illustration</h3>
+            <p class="timeline-meta">Institut Artline</p>
+            <p>Formation pratique en arts appliqués pour les industries du jeu vidéo, du
+               cinéma et des médias numériques. Projet de fin d'études :
+               <strong>bible graphique solarpunk</strong> inspirée de The Legend of Zelda —
+               personnages, créatures et environnements.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-period">2023 — 2024</div>
+          <div class="timeline-body">
+            <p class="timeline-eyebrow">Job étudiant</p>
+            <h3>Préparateur de commandes</h3>
+            <p class="timeline-meta">Leclerc Drive · Montpellier</p>
+            <p>En parallèle des études — rigueur, cadence, travail en équipe.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-period">2021 — 2022</div>
+          <div class="timeline-body">
+            <p class="timeline-eyebrow">Formation</p>
+            <h3>Mise à Niveau en Arts Appliqués</h3>
+            <p class="timeline-meta">Institut Artline · MANAA</p>
+            <p>Dessin, graphisme, culture artistique, outils numériques — bases solides
+               pour le cursus créatif.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-period">2019 — 2021</div>
+          <div class="timeline-body">
+            <p class="timeline-eyebrow">Formation · Projet technique</p>
+            <h3>BTS SNIR — Systèmes Numériques</h3>
+            <p class="timeline-meta">Lycée Dhuoda · Nîmes · Option Informatique &amp; Réseaux</p>
+            <p>Projet de fin d'études : station de pompage — serveur SQL pour archiver
+               les capteurs, publication temps réel sur un site web et application Android
+               avec système de droits administrateurs / techniciens / visiteurs.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-period">avant 2019</div>
+          <div class="timeline-body">
+            <p class="timeline-eyebrow">Formation</p>
+            <h3>BAC STI2D</h3>
+            <p class="timeline-meta">Lycée Jean-Baptiste Dumas · Alès</p>
+            <p>Spécialité Systèmes d'Information et Numérique.</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <section id="projects" class="section container">
       <div class="section-header reveal">
-        <h2 class="section-title">Travaux</h2>
-        <p class="section-subtitle">Études de cas et galeries créatives</p>
+        <p class="eyebrow">04 · Travaux</p>
+        <h2 class="section-title">Études de cas &amp; galeries créatives.</h2>
+        <p class="section-subtitle">Un aperçu — pour le reste, on en parle.</p>
       </div>
 
       <article class="card project-feature reveal">
@@ -171,9 +340,10 @@
           <p class="badge">Étude de cas complète</p>
           <h3 class="project-feature__title">Waldos Legend</h3>
           <p class="text-muted project-feature__text">
-            Refonte globale du site & écosystème marketing. Audit de l’existant, structuration des
-            parcours d’achat, conception Figma et intégration Shopify (HTML/CSS/Liquid).
-            Mise en place d'une stratégie de communication : Klaviyo, Meta Ads et contenus visuels.
+            Refonte globale du site &amp; écosystème marketing. Audit de l'existant,
+            structuration des parcours d'achat, conception Figma et intégration Shopify
+            (HTML/CSS/Liquid). Mise en place d'une stratégie de communication complète :
+            Klaviyo, Meta Ads et contenus visuels.
           </p>
           <a href="assets/dossier-projet-waldos.pdf" target="_blank" rel="noopener" class="btn btn-primary">
             Consulter le dossier PDF
@@ -181,35 +351,50 @@
         </div>
 
         <div class="project-feature__media">
-          <img src="assets/projet-waldos-legend.webp" alt="Illustration Waldos Legend">
+          <img src="assets/projet-waldos-legend.webp" alt="Illustration Waldos Legend" loading="lazy">
         </div>
       </article>
 
       <div class="projects-grid">
         <article class="card project-card reveal">
           <p class="badge badge-ghost">UX/UI · Produit</p>
-          <h3>Maquettes d’interface</h3>
-          <p>Sélection de maquettes d’interfaces pour des projets e-commerce (Desktop, Mobile, Prototypes).</p>
+          <h3>Maquettes d'interface</h3>
+          <p>Sélection de maquettes pour des projets e-commerce : desktop, mobile, prototypes
+             et composants réutilisables.</p>
           <a href="#" class="btn btn-secondary project-link" data-gallery="uxui">Ouvrir la galerie</a>
         </article>
 
         <article class="card project-card reveal delay-1">
           <p class="badge badge-ghost">Marketing Digital</p>
-          <h3>Campagnes & Ads</h3>
-          <p>Supports créés pour l’acquisition : Templates emails Klaviyo, bannières et encarts promotionnels.</p>
+          <h3>Campagnes &amp; Ads</h3>
+          <p>Supports créés pour l'acquisition : templates emails Klaviyo, bannières,
+             encarts promotionnels, visuels Meta Ads.</p>
           <a href="#" class="btn btn-secondary project-link" data-gallery="marketing">Ouvrir la galerie</a>
         </article>
 
         <article class="card project-card reveal delay-2">
-          <p class="badge badge-ghost">Identité · Print</p>
+          <p class="badge badge-ghost">Identité · Print · Social</p>
           <h3>Visuels de marque</h3>
-          <p>Créations visuelles, concept art, photographie produit et supports print pour installer un univers.</p>
+          <p>Créations visuelles, concept art, photo produit, print et social media pour
+             installer un univers cohérent.</p>
           <a href="#" class="btn btn-secondary project-link" data-gallery="illu">Ouvrir la galerie</a>
+        </article>
+
+        <article class="card project-card reveal delay-3">
+          <p class="badge badge-ghost">Concept Art · Projet de fin d'études</p>
+          <h3>Bible Graphique Solarpunk</h3>
+          <p>Direction artistique inspirée de The Legend of Zelda — conception de
+             personnages, créatures et environnements pour un univers solarpunk cohérent.
+             Sélection de visuels désormais intégrée localement.</p>
+          <a href="#" class="btn btn-secondary project-link" data-gallery="creative">Ouvrir la galerie</a>
         </article>
       </div>
 
       <div class="motion-section reveal">
-        <h3 class="subsection-title">Motion & Montage Vidéo</h3>
+        <div class="motion-section-header">
+          <h3 class="subsection-title">Motion &amp; Montage Vidéo</h3>
+          <p class="text-muted">After Effects, Premiere Pro — montage, rig, animation 2D, habillages.</p>
+        </div>
 
         <div class="videos-carousel">
           <button class="videos-nav videos-prev" aria-label="Vidéo précédente">‹</button>
@@ -219,14 +404,14 @@
               <div class="video-embed-ratio">
                 <iframe src="https://player.vimeo.com/video/1144891837?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" title="Montage vidéo Waldos Legend"></iframe>
               </div>
-              <p class="video-caption">Montage vidéo & motion pour Projet Waldos Legend.</p>
+              <p class="video-caption">Montage vidéo &amp; motion pour le projet Waldos Legend.</p>
             </article>
 
             <article class="video-item">
               <div class="video-embed-ratio">
                 <video controls preload="metadata"><source src="assets/5.mp4" type="video/mp4"></video>
               </div>
-              <p class="video-caption">Démo After Effects x Premiere Pro</p>
+              <p class="video-caption">Démo After Effects × Premiere Pro</p>
             </article>
 
             <article class="video-item">
@@ -247,7 +432,7 @@
               <div class="video-embed-ratio">
                 <video controls preload="metadata"><source src="assets/2.mp4" type="video/mp4"></video>
               </div>
-              <p class="video-caption">Test rig After Effect.</p>
+              <p class="video-caption">Test rig After Effects</p>
             </article>
 
             <article class="video-item">
@@ -265,27 +450,29 @@
 
     <section id="contact" class="section container">
       <div class="card card-outline contact-card contact-inner reveal">
+        <p class="eyebrow">05 · Contact</p>
         <h2 class="section-title contact-title">Prêt à collaborer ?</h2>
         <p class="contact-text">
-          Disponible pour des projets UX/UI, concept art, illustration ou une poursuite d’études en
-          Mastère avec alternance. N’hésitez pas à me contacter.
+          Disponible pour des missions UX/UI, marketing digital, illustration, motion
+          ou une poursuite d'études en Mastère avec alternance. Une idée, un brief,
+          une question — écris-moi.
         </p>
 
         <div class="contact-actions">
-          <a href="#" class="btn btn-primary" id="email-link">M’écrire un mail</a>
+          <a href="#" class="btn btn-primary" id="email-link">M'écrire un mail</a>
           <a href="#" class="btn btn-secondary" id="phone-link"></a>
         </div>
 
         <div class="contact-socials">
           <a href="https://www.linkedin.com/in/%C3%A9milien-wienin-7b643a220/" target="_blank" rel="noopener" class="badge badge-transparent">LinkedIn</a>
-          <a href="https://www.instagram.com/lavande_outremer/" target="_blank" rel="noopener" class="badge badge-transparent">Instagram</a>
+          <a href="https://www.instagram.com/lavande_outremer/" target="_blank" rel="noopener" class="badge badge-transparent">Instagram · illustrations</a>
         </div>
       </div>
     </section>
 
     <div class="lightbox" id="lightbox" aria-hidden="true">
       <div class="lightbox-overlay" data-lightbox-close></div>
-      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galerie d’images">
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galerie d'images">
         <button class="lightbox-close" data-lightbox-close aria-label="Fermer la galerie">×</button>
         <button class="lightbox-nav lightbox-prev" aria-label="Image précédente">‹</button>
 
@@ -306,8 +493,9 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> Émilien Wienin - Portfolio UX/UI & Concept Art.</p>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Émilien Wienin · Concepteur UX/UI · Marketing Digital · Illustration.</p>
+      <p class="footer-meta">Montpellier · France</p>
     </div>
   </footer>
   <script src="main.js"></script>
