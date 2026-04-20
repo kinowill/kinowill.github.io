@@ -37,3 +37,19 @@ Déploiement :
 
 À valider ensuite :
 - Revue visuelle humaine desktop/mobile.
+
+## 2026-04-20 - Correction titres mobile
+
+Changement :
+- Padding latéral `.container` renforcé sous 480px.
+- Taille du `h1` hero réduite au breakpoint mobile.
+- Taille des `.section-title` réduite au breakpoint mobile avec `overflow-wrap`.
+
+Contrôles exécutés :
+- `git diff --check` : OK.
+- `node --check main.js` : OK.
+- Serveur local `python -m http.server 8765` + requête `http://127.0.0.1:8765/index.html` : HTTP 200.
+
+À valider ensuite :
+- Vérification GitHub Pages après push.
+- Revue visuelle humaine sur téléphone.

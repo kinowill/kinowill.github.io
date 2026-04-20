@@ -24,6 +24,7 @@ Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retour
 - Lien myportfolio retiré des socials contact ; Instagram clarifié en `Instagram · illustrations`.
 - 68 visuels myportfolio téléchargés localement dans `/assets/creative/` et intégrés via `main.js`.
 - Photo de profil réduite dans `.hero-visual` sur desktop, tablette et mobile.
+- Titres mobiles corrigés : padding latéral renforcé et tailles de titres ajustées sous 480px.
 - Typo display Fraunces italique sur accents h1 + chiffres.
 - Responsive 3 breakpoints : 1024 / 768 / 480.
 - Orb chaude ambre ajoutée en background pour touche créative.
