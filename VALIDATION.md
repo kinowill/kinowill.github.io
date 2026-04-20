@@ -50,6 +50,9 @@ Contrôles exécutés :
 - `node --check main.js` : OK.
 - Serveur local `python -m http.server 8765` + requête `http://127.0.0.1:8765/index.html` : HTTP 200.
 
+Déploiement :
+- Push effectué sur `main` : commit `681717a`.
+- GitHub Pages vérifié après propagation : `style.css` contient le padding mobile et les tailles de titres corrigées.
+
 À valider ensuite :
-- Vérification GitHub Pages après push.
 - Revue visuelle humaine sur téléphone.
