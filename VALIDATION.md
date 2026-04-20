@@ -3,8 +3,8 @@
 ## 2026-04-20 - Reprise refonte portfolio
 
 État vérifié :
-- Repo modifié localement.
-- Prod non alignée : aucun push ni déploiement effectué pendant cette session.
+- Repo commité et poussé sur `main` : commit refonte `a255ec2`.
+- Prod non confirmée : push GitHub effectué, déploiement GitHub Pages non vérifié.
 - Validation réelle humaine non effectuée.
 
 Contrôles exécutés :
@@ -17,5 +17,4 @@ Contrôles exécutés :
 
 À valider ensuite :
 - Revue visuelle desktop/mobile.
-- Push sur `main`.
 - Vérification GitHub Pages après déploiement.

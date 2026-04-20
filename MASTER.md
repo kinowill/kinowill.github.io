@@ -8,11 +8,11 @@ Site statique pur : `index.html` + `style.css` + `main.js`. Déploiement prévu 
 
 ## État au 2026-04-20
 
-**Repo modifié localement, non commité, non poussé.**
+**Repo commité et poussé sur `main`. Déploiement GitHub Pages à vérifier.**
 
-Refonte v1 finalisée localement après reprise du chantier interrompu. Les derniers retours Émilien ont été intégrés dans le code. La version reste non validée visuellement par Émilien et non déployée.
+Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retours Émilien ont été intégrés dans le code et poussés sur GitHub. La version reste non validée visuellement par Émilien ; le déploiement GitHub Pages doit encore être vérifié.
 
-### Ce qui est fait localement
+### Ce qui est fait dans le repo
 - Bouton CV retiré du header et du menu mobile, PDF toujours présent dans `/assets/` mais non linké.
 - Hero reformulé CV-style : `Concepteur UX/UI, Marketing Digital & Illustration.`
 - Stat hero `BAC+3 / Félicitations du Jury` remplacée par `6 expertises connectées`.
@@ -30,7 +30,6 @@ Refonte v1 finalisée localement après reprise du chantier interrompu. Les dern
 
 ### Reste à faire
 - Revue visuelle humaine du rendu desktop/mobile.
-- Commit puis push sur `main`.
 - Vérifier le déploiement GitHub Pages après push.
 - Validation réelle en ligne après déploiement.
 
