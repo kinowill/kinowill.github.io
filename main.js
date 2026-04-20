@@ -28,13 +28,6 @@ const revealElements = document.querySelectorAll('.reveal');
     })();
 
     (() => {
-      const creativeJpgIndexes = new Set([22, 36, 57, 62]);
-      const creativeFiles = Array.from({ length: 68 }, (_, index) => {
-        const number = index + 1;
-        const extension = creativeJpgIndexes.has(number) ? 'jpg' : 'png';
-        return `assets/creative/creative-${String(number).padStart(2, '0')}.${extension}`;
-      });
-
       const galleries = {
         uxui: [
           { src: 'assets/uxui-1.webp', alt: 'UX/UI - Maquette Figma Desktop' },
@@ -67,11 +60,7 @@ const revealElements = document.querySelectorAll('.reveal');
           { src: 'assets/Social-4.webp', alt: 'Exemples De Posts' },
           { src: 'assets/Social-5.webp', alt: 'Conception du Hub de Liens' },
           { src: 'assets/Social-6.webp', alt: 'Assemblage Magazine' }
-        ],
-        creative: creativeFiles.map((src, index) => ({
-          src,
-          alt: `Portfolio créatif - visuel ${String(index + 1).padStart(2, '0')}`
-        }))
+        ]
       };
 
       const lightbox = document.getElementById('lightbox');

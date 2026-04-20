@@ -20,9 +20,10 @@ Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retour
 - Carte `Shopify & IA appliquée` : Shopify/Liquid conservé, WordPress/JS retirés, prompt engineering/outils agentiques/workflows IA ajoutés.
 - Carte Motion allégée : retrait de la modélisation 3D/Maya.
 - Nouvelle section Parcours : timeline verticale complète, de LiveCampus à BAC STI2D.
-- Carte `Bible Graphique Solarpunk` reliée à une galerie locale `creative`.
+- Carte `Bible Graphique Solarpunk` reliée directement à Instagram `@lavande_outremer`.
 - Lien myportfolio retiré des socials contact ; Instagram clarifié en `Instagram · illustrations`.
-- 68 visuels myportfolio téléchargés localement dans `/assets/creative/` et intégrés via `main.js`.
+- Scraping myportfolio abandonné : galerie locale `creative` et assets `/assets/creative/` supprimés.
+- Lien du dossier PDF Waldos réglé avec fragment `#zoom=50` depuis le site.
 - Photo de profil réduite dans `.hero-visual` sur desktop, tablette et mobile.
 - Titres mobiles corrigés : padding latéral renforcé et tailles de titres ajustées sous 480px.
 - Typo display Fraunces italique sur accents h1 + chiffres.
@@ -33,19 +34,21 @@ Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retour
 - Revue visuelle humaine du rendu desktop/mobile.
 - Validation humaine finale en ligne.
 
-## Scraping myportfolio
-- Pages sources téléchargées temporairement pendant la session : home (92KB) + `/test` (102KB).
-- 68 images `_rw_1200` uniques récupérées depuis `cdn.myportfolio.com/3b62b7a9-c776-4a6b-b149-5a75eb162294/`.
-- Destination locale : `/assets/creative/`.
-- Intégration : galerie `creative` dans `main.js`, appelée depuis la carte `Bible Graphique Solarpunk`.
-- Le site myportfolio reste obsolète et ne doit plus être linké publiquement.
+## Portfolio créatif
+- Source publique retenue : Instagram `@lavande_outremer`.
+- Ancien myportfolio abandonné : ne pas linker, ne pas scraper, ne pas réintégrer les visuels.
+- La carte `Bible Graphique Solarpunk` pointe vers Instagram, car la galerie scrapée mélangeait des visuels non souhaités.
+
+## PDF Waldos
+- Lien depuis le site : `assets/dossier-projet-waldos.pdf#zoom=50`.
+- Limite connue : l'URL directe `https://kinowill.github.io/assets/dossier-projet-waldos.pdf` dépend du lecteur PDF du navigateur. Sans outil PDF local capable de réécrire l'Initial View, le zoom 50% ne peut pas être garanti sur l'URL directe sans fragment.
 
 ## Sources de vérité
 - **Ce document** : état courant.
 - **Roadmap/backlog** : section `Reste à faire` ci-dessus.
 - **Journal de validation** : `VALIDATION.md`.
 - **Code** : `index.html`, `style.css`, `main.js`.
-- **Assets locaux** : `/assets/`, dont `/assets/creative/` pour les visuels récupérés.
+- **Assets locaux** : `/assets/`.
 - **Git log** : historique des commits et déploiements effectifs.
 - **CV PDF** : `assets/CV-Emilien-Wienin.pdf`, source canonique pour les infos profil.
 - **Instagram `@lavande_outremer`** : portfolio créatif/illustration.
