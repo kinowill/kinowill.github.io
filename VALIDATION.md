@@ -72,8 +72,7 @@ Contrôles exécutés :
 - Serveur local `python -m http.server 8765` + requête `http://127.0.0.1:8765/index.html` : HTTP 200.
 
 À valider ensuite :
-- Vérification GitHub Pages après push.
-- Vérifier visuellement que la carte Solarpunk ouvre Instagram et non une galerie locale.
+- Revue visuelle humaine : confirmer que la carte Solarpunk ouvre Instagram comme attendu.
 
 ## 2026-04-20 - Zoom lien PDF Waldos
 
@@ -91,4 +90,8 @@ Contrôles exécutés :
 - Vérification locale : le HTML contient `assets/dossier-projet-waldos.pdf#zoom=50`.
 
 À valider ensuite :
-- Vérification GitHub Pages après push.
+- Revue visuelle humaine : confirmer le comportement du lecteur PDF selon le navigateur.
+
+Déploiement :
+- Push effectué sur `main` : commit `056eaae`.
+- GitHub Pages vérifié après propagation : plus de `data-gallery="creative"`, lien Solarpunk vers Instagram présent, lien PDF avec `#zoom=50` présent.
