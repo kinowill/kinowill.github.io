@@ -30,5 +30,10 @@ Contrôles exécutés :
 - `git diff --cached --check` : OK.
 - `node --check main.js` : OK.
 
+Déploiement :
+- Push effectué sur `main` : commit `5bc61dc`.
+- GitHub Pages vérifié en HTTP 200.
+- Nouveau wording visible en ligne : `UX`, `créa · marketing & IA`, `3 diplômes complémentaires`.
+
 À valider ensuite :
-- Vérification GitHub Pages après push.
+- Revue visuelle humaine desktop/mobile.
