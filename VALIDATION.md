@@ -18,3 +18,17 @@ Contrôles exécutés :
 À valider ensuite :
 - Revue visuelle desktop/mobile.
 - Vérification GitHub Pages après déploiement.
+
+## 2026-04-20 - Ajustement wording hero
+
+Changement :
+- Stat `6 expertises connectées` remplacée par `UX / créa · marketing & IA`.
+- Stat `2 Bachelors tech & créa` remplacée par `3 diplômes complémentaires`.
+
+Contrôles exécutés :
+- `git diff --check` : OK.
+- `git diff --cached --check` : OK.
+- `node --check main.js` : OK.
+
+À valider ensuite :
+- Vérification GitHub Pages après push.

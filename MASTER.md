@@ -8,14 +8,14 @@ Site statique pur : `index.html` + `style.css` + `main.js`. Déploiement prévu 
 
 ## État au 2026-04-20
 
-**Repo commité et poussé sur `main`. Déploiement GitHub Pages à vérifier.**
+**Repo commité et poussé sur `main`. GitHub Pages vérifié en HTTP 200.**
 
-Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retours Émilien ont été intégrés dans le code et poussés sur GitHub. La version reste non validée visuellement par Émilien ; le déploiement GitHub Pages doit encore être vérifié.
+Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retours Émilien ont été intégrés dans le code et poussés sur GitHub. La version est visible en ligne ; la revue visuelle humaine desktop/mobile reste à faire.
 
 ### Ce qui est fait dans le repo
 - Bouton CV retiré du header et du menu mobile, PDF toujours présent dans `/assets/` mais non linké.
 - Hero reformulé CV-style : `Concepteur UX/UI, Marketing Digital & Illustration.`
-- Stat hero `BAC+3 / Félicitations du Jury` remplacée par `6 expertises connectées`.
+- Stats hero clarifiées : `UX / créa · marketing & IA`, `3 diplômes complémentaires`, `C1 Anglais professionnel`.
 - Section Expertise passée à 6 cartes + bande Certifications : TOSA x3, GA4, Anglais C1, Félicitations du Jury.
 - Carte `Shopify & IA appliquée` : Shopify/Liquid conservé, WordPress/JS retirés, prompt engineering/outils agentiques/workflows IA ajoutés.
 - Carte Motion allégée : retrait de la modélisation 3D/Maya.
@@ -30,8 +30,7 @@ Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retour
 
 ### Reste à faire
 - Revue visuelle humaine du rendu desktop/mobile.
-- Vérifier le déploiement GitHub Pages après push.
-- Validation réelle en ligne après déploiement.
+- Validation humaine finale en ligne.
 
 ## Scraping myportfolio
 - Pages sources téléchargées temporairement pendant la session : home (92KB) + `/test` (102KB).
