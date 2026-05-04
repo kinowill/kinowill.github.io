@@ -1267,7 +1267,7 @@ h3 {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   .section {
