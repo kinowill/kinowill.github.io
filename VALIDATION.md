@@ -114,8 +114,8 @@ Déploiement :
 - Push effectué sur `main` : commits `2c1edce` (premier essai container 768px), puis le vrai fix dans le commit suivant.
 - GitHub Pages vérifié.
 
-À valider ensuite :
-- Revue visuelle humaine en mobile + tablette pour confirmer la respiration latérale.
+Validation humaine :
+- 2026-05-04 : marges latérales confirmées OK en ligne par Émilien (desktop + mobile).
 
 ## 2026-05-04 - Ajout projet Lucide
 
@@ -133,5 +133,5 @@ Déploiement :
 - Push effectué sur `main`.
 - GitHub Pages vérifié.
 
-À valider ensuite :
-- Revue visuelle humaine de la carte Lucide (rendu desktop/mobile, visuel non déformé, CTA fonctionnel).
+Validation humaine :
+- 2026-05-04 : carte Lucide confirmée OK en ligne par Émilien (rendu, visuel, CTA).

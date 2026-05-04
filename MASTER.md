@@ -33,8 +33,7 @@ Session du 2026-05-04 : correction d'un bug de marges latérales responsive (sho
 - **Projet Lucide ajouté** : grosse carte feature après la grille des 4 projets, même format que Waldos. Badge `Projet perso · Conçu & développé de A à Z`, CTA vers `https://lucide-tests.fr/`. Visuel `assets/projet-lucide.png` récupéré depuis l'OG image du site.
 
 ### Reste à faire
-- Revue visuelle humaine : marges latérales mobile + carte Lucide (desktop/mobile).
-- Validation humaine finale en ligne.
+- Rien d'urgent. Marges responsive et carte Lucide validées en ligne le 2026-05-04.
 
 ## Portfolio créatif
 - Source publique retenue : Instagram `@lavande_outremer`.
