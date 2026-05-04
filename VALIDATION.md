@@ -95,3 +95,43 @@ Contrôles exécutés :
 Déploiement :
 - Push effectué sur `main` : commit `056eaae`.
 - GitHub Pages vérifié après propagation : plus de `data-gallery="creative"`, lien Solarpunk vers Instagram présent, lien PDF avec `#zoom=50` présent.
+
+## 2026-05-04 - Fix marges latérales responsive
+
+Symptôme rapporté : sous 1280px (tablette/mobile), les sections collaient au bord gauche/droit. Tentative initiale d'augmenter le padding du `.container` à 768px : sans effet, parce que `.section { padding: 7rem 0 }` (shorthand) écrasait la valeur horizontale du `.container` sur tous les `<section class="section container">`.
+
+Changement :
+- `.section { padding: 7rem 0 }` → `padding-block: 7rem` (style.css ligne 130).
+- `.section { padding: 5rem 0 }` → `padding-block: 5rem` (breakpoint 768px).
+- `.section { padding: 4rem 0 }` → `padding-block: 4rem` (breakpoint 480px).
+- Le padding latéral du `.container` (1.5rem desktop / 1.5rem 768px / 1.25rem 480px) s'applique désormais correctement.
+
+Contrôles exécutés :
+- `git diff` : 3 lignes modifiées dans `style.css`, aucun autre impact.
+- Vérification prod (curl `kinowill.github.io/style.css`) : les 3 occurrences `padding-block` présentes.
+
+Déploiement :
+- Push effectué sur `main` : commits `2c1edce` (premier essai container 768px), puis le vrai fix dans le commit suivant.
+- GitHub Pages vérifié.
+
+À valider ensuite :
+- Revue visuelle humaine en mobile + tablette pour confirmer la respiration latérale.
+
+## 2026-05-04 - Ajout projet Lucide
+
+Changement :
+- Nouvelle carte feature `Lucide — Tests de personnalité scientifiques` ajoutée dans la section *Travaux*, après la grille des 4 projets, même format que la carte Waldos (layout 2 colonnes contenu + visuel).
+- Badge : `Projet perso · Conçu & développé de A à Z`.
+- Description : tests francophones fondés sur la recherche scientifique, six tests gratuits/anonymes, stratégie/UX-UI/intégration/déploiement portés en solo.
+- CTA : `Visiter lucide-tests.fr` → `https://lucide-tests.fr/`.
+- Visuel : OG image récupérée depuis `lucide-tests.fr/assets/img/og-default.png`, sauvegardée localement en `assets/projet-lucide.png` (24 Ko).
+
+Contrôles exécutés :
+- Vérification prod (curl `kinowill.github.io/index.html`) : 2 occurrences `lucide-tests.fr` présentes (carte + lien).
+
+Déploiement :
+- Push effectué sur `main`.
+- GitHub Pages vérifié.
+
+À valider ensuite :
+- Revue visuelle humaine de la carte Lucide (rendu desktop/mobile, visuel non déformé, CTA fonctionnel).

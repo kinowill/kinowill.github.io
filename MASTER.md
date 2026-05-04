@@ -6,11 +6,11 @@ Portfolio public d'Émilien Wienin (`kinowill.github.io`), repositionné sur un 
 ## Stack
 Site statique pur : `index.html` + `style.css` + `main.js`. Déploiement prévu via GitHub Pages, repo `kinowill/kinowill.github.io`, branche `main`.
 
-## État au 2026-04-20
+## État au 2026-05-04
 
-**Repo commité et poussé sur `main`. GitHub Pages vérifié en HTTP 200.**
+**Repo commité et poussé sur `main`. GitHub Pages vérifié.**
 
-Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retours Émilien ont été intégrés dans le code et poussés sur GitHub. La version est visible en ligne ; la revue visuelle humaine desktop/mobile reste à faire.
+Session du 2026-05-04 : correction d'un bug de marges latérales responsive (shorthand CSS qui écrasait silencieusement le padding du `.container` sur les `.section`) et ajout du projet personnel **Lucide** en grosse carte feature dans la section Travaux.
 
 ### Ce qui est fait dans le repo
 - Bouton CV retiré du header et du menu mobile, PDF toujours présent dans `/assets/` mais non linké.
@@ -29,9 +29,11 @@ Refonte v1 finalisée après reprise du chantier interrompu. Les derniers retour
 - Typo display Fraunces italique sur accents h1 + chiffres.
 - Responsive 3 breakpoints : 1024 / 768 / 480.
 - Orb chaude ambre ajoutée en background pour touche créative.
+- **Marges latérales responsive corrigées** : `.section { padding: Xrem 0 }` remplacé par `padding-block: Xrem` (3 occurrences) — le shorthand écrasait le padding horizontal du `.container` sur tous les `<section class="section container">`. Conséquence : sous 1280px les sections collaient aux bords. Désormais la respiration latérale (1.5rem desktop / 1.5rem 768px / 1.25rem 480px) s'applique correctement.
+- **Projet Lucide ajouté** : grosse carte feature après la grille des 4 projets, même format que Waldos. Badge `Projet perso · Conçu & développé de A à Z`, CTA vers `https://lucide-tests.fr/`. Visuel `assets/projet-lucide.png` récupéré depuis l'OG image du site.
 
 ### Reste à faire
-- Revue visuelle humaine du rendu desktop/mobile.
+- Revue visuelle humaine : marges latérales mobile + carte Lucide (desktop/mobile).
 - Validation humaine finale en ligne.
 
 ## Portfolio créatif
