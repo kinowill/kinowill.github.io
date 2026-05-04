@@ -127,7 +127,7 @@ iframe {
 }
 
 .section {
-  padding: 7rem 0;
+  padding-block: 7rem;
 }
 
 .section-header {
@@ -1271,7 +1271,7 @@ h3 {
   }
 
   .section {
-    padding: 5rem 0;
+    padding-block: 5rem;
   }
 
   .section-header {
@@ -1455,7 +1455,7 @@ h3 {
   }
 
   .section {
-    padding: 4rem 0;
+    padding-block: 4rem;
   }
 
   .hero h1 {
