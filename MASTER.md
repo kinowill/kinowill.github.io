@@ -8,9 +8,9 @@ Site statique pur : `index.html` + `style.css` + `main.js`. Déploiement prévu 
 
 ## État au 2026-06-03
 
-**Repo modifié localement. Prod non alignée. Validation locale automatisée effectuée, revue humaine non effectuée.**
+**Repo commité et poussé sur `main`. Prod alignée via GitHub Pages. Validation HTTP effectuée, revue humaine finale non effectuée.**
 
-Session du 2026-06-03 : retrait de la formule signalée dans le sous-titre de la section À propos, jugée inadaptée. Le nouveau texte est `Tech, design, marketing, illustration — formé aux quatre.`
+Session du 2026-06-03 : retrait de la formule signalée dans le sous-titre de la section À propos, jugée inadaptée. Le nouveau texte est `Tech, design, marketing, illustration — formé aux quatre.` Commit `fa7e1b4` poussé sur `main`; GitHub Pages vérifiée en HTTP 200 avec le nouveau sous-titre.
 
 ## État au 2026-05-04
 
@@ -39,8 +39,7 @@ Session du 2026-05-04 : correction d'un bug de marges latérales responsive (sho
 - **Projet Lucide ajouté** : grosse carte feature après la grille des 4 projets, même format que Waldos. Badge `Projet perso · Conçu & développé de A à Z`, CTA vers `https://lucide-tests.fr/`. Visuel `assets/projet-lucide.png` récupéré depuis l'OG image du site.
 
 ### Reste à faire
-- Déployer le retrait du wording si le changement est validé.
-- Revue visuelle humaine desktop/mobile après déploiement.
+- Revue visuelle humaine desktop/mobile du wording publié.
 
 ## Portfolio créatif
 - Source publique retenue : Instagram `@lavande_outremer`.
