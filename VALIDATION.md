@@ -6,8 +6,8 @@ Changement :
 - Sous-titre de la section À propos simplifié en `Tech, design, marketing, illustration`.
 
 État :
-- Repo modifié localement.
-- Prod non alignée avec cette dernière simplification.
+- Repo commité et poussé sur `main` : commit `f59e721`.
+- Prod alignée : GitHub Pages sert le nouveau sous-titre.
 - Validation réelle humaine non effectuée.
 
 Contrôles exécutés :
@@ -15,6 +15,8 @@ Contrôles exécutés :
 - `node --check main.js` : OK.
 - Recherche locale dans `index.html` : formules retirées absentes, nouveau sous-titre présent.
 - Revue du diff : uniquement `index.html`, `MASTER.md`, `VALIDATION.md`.
+- Push `origin/main` : OK.
+- Vérification prod `https://kinowill.github.io/index.html` : HTTP 200, nouveau sous-titre présent au premier essai.
 
 À valider ensuite :
 - Revue visuelle humaine desktop/mobile.

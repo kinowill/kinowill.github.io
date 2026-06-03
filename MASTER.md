@@ -8,9 +8,9 @@ Site statique pur : `index.html` + `style.css` + `main.js`. Déploiement prévu 
 
 ## État au 2026-06-03
 
-**Repo modifié localement. Prod non alignée avec cette dernière simplification. Validation locale automatisée effectuée, revue humaine finale non effectuée.**
+**Repo commité et poussé sur `main`. Prod alignée via GitHub Pages. Validation HTTP effectuée, revue humaine finale non effectuée.**
 
-Session du 2026-06-03 : simplification du sous-titre de la section À propos, jugé trop chargé. Le nouveau texte est `Tech, design, marketing, illustration`.
+Session du 2026-06-03 : simplification du sous-titre de la section À propos, jugé trop chargé. Le nouveau texte est `Tech, design, marketing, illustration`. Commit `f59e721` poussé sur `main`; GitHub Pages vérifiée en HTTP 200 avec le nouveau sous-titre.
 
 ## État au 2026-05-04
 
