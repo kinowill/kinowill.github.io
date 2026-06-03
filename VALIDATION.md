@@ -1,22 +1,20 @@
 # Journal de validation
 
-## 2026-06-03 - Retrait wording section À propos
+## 2026-06-03 - Simplification wording section À propos
 
 Changement :
-- Sous-titre de la section À propos raccourci en `Tech, design, marketing, illustration — formé aux quatre.`
+- Sous-titre de la section À propos simplifié en `Tech, design, marketing, illustration`.
 
 État :
-- Repo commité et poussé sur `main` : commit `fa7e1b4`.
-- Prod alignée : GitHub Pages sert le nouveau sous-titre.
+- Repo modifié localement.
+- Prod non alignée avec cette dernière simplification.
 - Validation réelle humaine non effectuée.
 
 Contrôles exécutés :
 - `git diff --check` : OK.
 - `node --check main.js` : OK.
-- Recherche locale dans `index.html` : ancienne formule absente, nouveau sous-titre présent.
+- Recherche locale dans `index.html` : formules retirées absentes, nouveau sous-titre présent.
 - Revue du diff : uniquement `index.html`, `MASTER.md`, `VALIDATION.md`.
-- Push `origin/main` : OK.
-- Vérification prod `https://kinowill.github.io/index.html` : HTTP 200, ancien wording encore présent aux essais 1 et 2, nouveau sous-titre présent à l'essai 3 après propagation.
 
 À valider ensuite :
 - Revue visuelle humaine desktop/mobile.
