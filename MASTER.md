@@ -6,6 +6,12 @@ Portfolio public d'Émilien Wienin (`kinowill.github.io`), repositionné sur un 
 ## Stack
 Site statique pur : `index.html` + `style.css` + `main.js`. Déploiement prévu via GitHub Pages, repo `kinowill/kinowill.github.io`, branche `main`.
 
+## État au 2026-06-03
+
+**Repo modifié localement. Prod non alignée. Validation locale automatisée effectuée, revue humaine non effectuée.**
+
+Session du 2026-06-03 : retrait de la formule signalée dans le sous-titre de la section À propos, jugée inadaptée. Le nouveau texte est `Tech, design, marketing, illustration — formé aux quatre.`
+
 ## État au 2026-05-04
 
 **Repo commité et poussé sur `main`. GitHub Pages vérifié.**
@@ -33,7 +39,8 @@ Session du 2026-05-04 : correction d'un bug de marges latérales responsive (sho
 - **Projet Lucide ajouté** : grosse carte feature après la grille des 4 projets, même format que Waldos. Badge `Projet perso · Conçu & développé de A à Z`, CTA vers `https://lucide-tests.fr/`. Visuel `assets/projet-lucide.png` récupéré depuis l'OG image du site.
 
 ### Reste à faire
-- Rien d'urgent. Marges responsive et carte Lucide validées en ligne le 2026-05-04.
+- Déployer le retrait du wording si le changement est validé.
+- Revue visuelle humaine desktop/mobile après déploiement.
 
 ## Portfolio créatif
 - Source publique retenue : Instagram `@lavande_outremer`.

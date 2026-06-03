@@ -1,5 +1,27 @@
 # Journal de validation
 
+## 2026-06-03 - Retrait wording section À propos
+
+Changement :
+- Sous-titre de la section À propos raccourci en `Tech, design, marketing, illustration — formé aux quatre.`
+
+État :
+- Repo modifié localement.
+- Prod non alignée.
+- Validation réelle humaine non effectuée.
+
+Contrôles exécutés :
+- `git diff --check` : OK.
+- `node --check main.js` : OK.
+- Recherche locale dans `index.html` : ancienne formule absente, nouveau sous-titre présent.
+- Revue du diff : uniquement `index.html`, `MASTER.md`, `VALIDATION.md`.
+
+À valider ensuite :
+- Revue visuelle humaine desktop/mobile.
+- Déploiement GitHub Pages si le wording est validé.
+
+---
+
 ## 2026-04-20 - Reprise refonte portfolio
 
 État vérifié :
